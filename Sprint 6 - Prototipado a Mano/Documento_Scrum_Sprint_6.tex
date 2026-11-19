@@ -1,0 +1,216 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------- Idioma y codificación ----------
+\usepackage[spanish,es-tabla]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+% ---------- Formato de página ----------
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{setspace}
+\setstretch{1.15}
+\usepackage{parskip}
+
+% ---------- Tablas y listas ----------
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{enumitem}
+
+% ---------- Títulos en negrita (sin color) ----------
+\usepackage{titlesec}
+\titleformat{\section}
+  {\Large\bfseries}
+  {\thesection}{0.8em}{}
+\titleformat{\subsection}
+  {\large\bfseries}
+  {\thesubsection}{0.6em}{}
+\titleformat{\subsubsection}
+  {\normalsize\bfseries}
+  {\thesubsubsection}{0.5em}{}
+\titlespacing*{\section}{0pt}{18pt}{8pt}
+
+% ---------- Encabezado y pie ----------
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textbf{Scrum --- Sprint \arabic{sprintnum}}}
+\fancyhead[R]{\small\textbf{CrediStep}}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% ---------- Número de sprint ----------
+\newcounter{sprintnum}
+\setcounter{sprintnum}{6}   % Cambie este número en cada sprint
+
+% ---------- Caja del objetivo (solo blanco y negro) ----------
+\usepackage[most]{tcolorbox}
+\newtcolorbox{objetivo}{
+  colback=white, colframe=black,
+  boxrule=0.8pt, arc=0pt,
+  left=8pt, right=8pt, top=6pt, bottom=6pt,
+  fonttitle=\bfseries, title={Objetivo del Sprint}
+}
+
+% ======================================================
+\begin{document}
+
+% ---------- Portada ----------
+\begin{center}
+  {\Huge\bfseries Documento de Sprint} \\[0.4cm]
+  {\LARGE\bfseries Sprint \arabic{sprintnum}} \\[0.3cm]
+  {\large CrediStep} \\[1.2cm]
+\end{center}
+
+\section{Información general}
+
+\begin{tabularx}{\textwidth}{>{\bfseries}l X}
+  \toprule
+  Sprint               & \arabic{sprintnum} \\
+  Proyecto             & CrediStep \\
+  Product Owner        & Víctor Hugo Vela Pinzón (profesor) \\
+  Scrum Master         & Beiker Romario Jaramillo Giraldo \\
+  Equipo de desarrollo & Laura Sofía Ortiz Gómez, Sarahy Michelle Silva Pinto, Valentina Carrillo Peñuela, Miguel Ángel Gómez López \\
+  Fecha de inicio      & 13/10/2026 \\
+  Fecha de fin         & 19/10/2026 \\
+  Duración             & 1 semana \\
+  Capacidad del equipo & 8 puntos \\
+  \bottomrule
+\end{tabularx}
+
+% ---------- 2. Objetivo del sprint ----------
+\section{Objetivo del sprint}
+
+\begin{objetivo}
+  Dibujar a mano el flujo principal de CrediStep y presentarlo en el taller práctico de prototipo rápido.
+\end{objetivo}
+
+% ---------- 3. Backlog del sprint ----------
+\section{Backlog del sprint}
+
+\subsection{Historias de usuario seleccionadas}
+
+\begin{tabularx}{\textwidth}{c X c c c}
+  \toprule
+  \textbf{ID} & \textbf{Historia de usuario} & \textbf{Prioridad} & \textbf{Puntos} & \textbf{Estado} \\
+  \midrule
+  HU-01 & Como equipo, quiero dibujar las pantallas de inicio de sesión y diagnóstico, para mostrar cómo empieza el usuario. & Alta & 3 & Terminada \\
+  HU-02 & Como equipo, quiero dibujar la pantalla de resultado, el plan y la acción recomendada, para mostrar cómo avanza el usuario. & Alta & 3 & Terminada \\
+  HU-03 & Como equipo, quiero preparar la presentación del taller, para explicar cada pantalla en orden. & Media & 2 & Terminada \\
+  \bottomrule
+\end{tabularx}
+
+% ---------- 4. Desglose de tareas ----------
+\section{Desglose de tareas}
+
+\begin{tabularx}{\textwidth}{c X l c c}
+  \toprule
+  \textbf{HU} & \textbf{Tarea} & \textbf{Responsable} & \textbf{Horas est.} & \textbf{Estado} \\
+  \midrule
+  HU-01 & Dibujar a mano las cinco pantallas & Beiker Jaramillo & 5 & Terminada \\
+  HU-01 & Definir el flujo y el orden de las pantallas & Laura Ortiz & 2 & Terminada \\
+  HU-02 & Escribir el texto que explica cada pantalla & Sarahy Silva & 2 & Terminada \\
+  HU-02 & Revisar el prototipo contra la propuesta de solución & Miguel Gómez & 1 & Terminada \\
+  HU-03 & Armar la presentación del taller & Valentina Carrillo & 2 & Terminada \\
+  \bottomrule
+\end{tabularx}
+
+% ---------- 5. Seguimiento diario (Daily Scrum) ----------
+\section{Seguimiento diario (Daily Scrum)}
+
+\begin{tabularx}{\textwidth}{c l X X X}
+  \toprule
+  \textbf{Día} & \textbf{Miembro} & \textbf{Ayer} & \textbf{Hoy} & \textbf{Impedimentos} \\
+  \midrule
+  1 & Laura Ortiz & Definimos las cinco pantallas & Ordenar el flujo de inicio a acción recomendada & Ninguno \\
+  2 & Beiker Jaramillo & Dibujamos inicio y diagnóstico & Dibujar resultado, plan y acción recomendada & Ninguno \\
+  \bottomrule
+\end{tabularx}
+
+\subsection{Impedimentos y acciones}
+
+\begin{tabularx}{\textwidth}{X l l}
+  \toprule
+  \textbf{Impedimento} & \textbf{Responsable} & \textbf{Estado} \\
+  \midrule
+  Ninguno en este sprint & Equipo & No aplica \\
+  \bottomrule
+\end{tabularx}
+
+% ---------- 6. Métricas del sprint ----------
+\section{Métricas del sprint}
+
+\begin{tabularx}{\textwidth}{X c c}
+  \toprule
+  \textbf{Indicador} & \textbf{Planeado} & \textbf{Real} \\
+  \midrule
+  Puntos de historia completados & 8 & 8 \\
+  Historias completadas          & 3 & 3 \\
+  Velocidad del equipo           & 8 & 8 \\
+  \bottomrule
+\end{tabularx}
+
+% ---------- 7. Revisión del sprint ----------
+\section{Revisión del sprint}
+
+\subsection{Incrementos entregados}
+\begin{itemize}[leftmargin=1.5em]
+  \item {Prototipo a mano de cinco pantallas, desde el inicio hasta la acción recomendada.}
+  \item {Presentación del taller práctico con la explicación de cada pantalla.}
+\end{itemize}
+
+\subsection{Retroalimentación de los interesados}
+{Comentarios del profesor sobre el prototipo entregado por Beiker (nota: 50/50, equivalente a 5,0):}
+\begin{itemize}[leftmargin=1.5em]
+  \item {Buen trabajo.}
+  \item {Le gustó que lo hecho a mano se detallara con gráficos y textos complementarios.}
+  \item {Se ven varias de las funcionalidades base de la propuesta de solución, lo que es importante para consolidar un MVP final junto con lo presentado por los demás compañeros.}
+  \item {La nota incluye el bono por hacerlo a mano.}
+\end{itemize}
+
+\subsection{Historias no completadas}
+\begin{tabularx}{\textwidth}{c X X}
+  \toprule
+  \textbf{ID} & \textbf{Motivo} & \textbf{Acción propuesta} \\
+  \midrule
+  -- & Todas las historias se completaron. & No aplica \\
+  \bottomrule
+\end{tabularx}
+
+% ---------- 8. Retrospectiva ----------
+\section{Retrospectiva del sprint}
+
+\subsection{Qué salió bien}
+\begin{itemize}[leftmargin=1.5em]
+  \item {El flujo completo se entiende en cinco pantallas.}
+  \item {Cada pantalla tiene una explicación corta de su propósito.}
+\end{itemize}
+
+\subsection{Qué se puede mejorar}
+\begin{itemize}[leftmargin=1.5em]
+  \item {El prototipo no se probó todavía con usuarios reales.}
+  \item {Falta unir los prototipos de todos en una sola versión para el MVP.}
+\end{itemize}
+
+\subsection{Acciones de mejora}
+\begin{tabularx}{\textwidth}{X l l}
+  \toprule
+  \textbf{Acción} & \textbf{Responsable} & \textbf{Fecha límite} \\
+  \midrule
+  Consolidar los prototipos del equipo en un MVP & Miguel Gómez & 16/11/2026 \\
+  Probar el prototipo con cinco jóvenes & Laura Ortiz & 24/11/2026 \\
+  \bottomrule
+\end{tabularx}
+
+% ---------- 9. Aprobaciones ----------
+\section{Aprobaciones}
+
+\vspace{1cm}
+\begin{tabularx}{\textwidth}{X X}
+  \textbf{Product Owner} & \textbf{Scrum Master} \\[2cm]
+  \rule{6cm}{0.4pt} & \rule{6cm}{0.4pt} \\
+  Firma y fecha & Firma y fecha \\
+\end{tabularx}
+
+\end{document}

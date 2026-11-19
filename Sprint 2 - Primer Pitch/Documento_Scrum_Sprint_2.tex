@@ -1,0 +1,223 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------- Idioma y codificación ----------
+\usepackage[spanish,es-tabla]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+% ---------- Formato de página ----------
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{setspace}
+\setstretch{1.15}
+\usepackage{parskip}
+
+% ---------- Tablas y listas ----------
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{enumitem}
+
+% ---------- Títulos en negrita (sin color) ----------
+\usepackage{titlesec}
+\titleformat{\section}
+  {\Large\bfseries}
+  {\thesection}{0.8em}{}
+\titleformat{\subsection}
+  {\large\bfseries}
+  {\thesubsection}{0.6em}{}
+\titleformat{\subsubsection}
+  {\normalsize\bfseries}
+  {\thesubsubsection}{0.5em}{}
+\titlespacing*{\section}{0pt}{18pt}{8pt}
+
+% ---------- Encabezado y pie ----------
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textbf{Scrum --- Sprint \arabic{sprintnum}}}
+\fancyhead[R]{\small\textbf{CrediStep}}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% ---------- Número de sprint ----------
+\newcounter{sprintnum}
+\setcounter{sprintnum}{2}   % Cambie este número en cada sprint
+
+% ---------- Caja del objetivo (solo blanco y negro) ----------
+\usepackage[most]{tcolorbox}
+\newtcolorbox{objetivo}{
+  colback=white, colframe=black,
+  boxrule=0.8pt, arc=0pt,
+  left=8pt, right=8pt, top=6pt, bottom=6pt,
+  fonttitle=\bfseries, title={Objetivo del Sprint}
+}
+
+% ======================================================
+\begin{document}
+
+% ---------- Portada ----------
+\begin{center}
+  {\Huge\bfseries Documento de Sprint} \\[0.4cm]
+  {\LARGE\bfseries Sprint \arabic{sprintnum}} \\[0.3cm]
+  {\large CrediStep} \\[1.2cm]
+\end{center}
+
+\section{Información general}
+
+\begin{tabularx}{\textwidth}{>{\bfseries}l X}
+  \toprule
+  Sprint               & \arabic{sprintnum} \\
+  Proyecto             & CrediStep \\
+  Product Owner        & Víctor Hugo Vela Pinzón (profesor) \\
+  Scrum Master         & Beiker Romario Jaramillo Giraldo \\
+  Equipo de desarrollo & Laura Sofía Ortiz Gómez, Sarahy Michelle Silva Pinto, Valentina Carrillo Peñuela, Miguel Ángel Gómez López \\
+  Fecha de inicio      & 03/08/2026 \\
+  Fecha de fin         & 31/08/2026 \\
+  Duración             & 4 semanas \\
+  Capacidad del equipo & 10 puntos \\
+  \bottomrule
+\end{tabularx}
+
+% ---------- 2. Objetivo del sprint ----------
+\section{Objetivo del sprint}
+
+\begin{objetivo}
+  Presentar CrediStep en un pitch de nueve partes, con diapositivas y guion que cuenten la misma historia.
+\end{objetivo}
+
+% ---------- 3. Backlog del sprint ----------
+\section{Backlog del sprint}
+
+\subsection{Historias de usuario seleccionadas}
+
+\begin{tabularx}{\textwidth}{c X c c c}
+  \toprule
+  \textbf{ID} & \textbf{Historia de usuario} & \textbf{Prioridad} & \textbf{Puntos} & \textbf{Estado} \\
+  \midrule
+  HU-01 & Como equipo, quiero diseñar nueve diapositivas que vayan del problema a la solución, para que el pitch sea fácil de seguir. & Alta & 5 & Terminada \\
+  HU-02 & Como equipo, quiero escribir un guion con las nueve partes, para hablar con un tono cercano a los jóvenes. & Alta & 3 & Terminada \\
+  HU-03 & Como equipo, quiero reunir los datos del pitch con su fuente y año, para que las cifras se puedan verificar. & Media & 2 & Terminada \\
+  \bottomrule
+\end{tabularx}
+
+% ---------- 4. Desglose de tareas ----------
+\section{Desglose de tareas}
+
+\begin{tabularx}{\textwidth}{c X l c c}
+  \toprule
+  \textbf{HU} & \textbf{Tarea} & \textbf{Responsable} & \textbf{Horas est.} & \textbf{Estado} \\
+  \midrule
+  HU-01 & Diseñar las nueve diapositivas & Valentina Carrillo & 5 & Terminada \\
+  HU-02 & Escribir el guion de las nueve partes & Sarahy Silva & 4 & Terminada \\
+  HU-02 & Ensayar el pitch y alinear guion con diapositivas & Beiker Jaramillo & 3 & Terminada \\
+  HU-03 & Reunir los datos y las fuentes del pitch & Laura Ortiz & 2 & Terminada \\
+  HU-03 & Revisar las cifras de las diapositivas & Miguel Gómez & 2 & Terminada \\
+  \bottomrule
+\end{tabularx}
+
+% ---------- 5. Seguimiento diario (Daily Scrum) ----------
+\section{Seguimiento diario (Daily Scrum)}
+
+\begin{tabularx}{\textwidth}{c l X X X}
+  \toprule
+  \textbf{Día} & \textbf{Miembro} & \textbf{Ayer} & \textbf{Hoy} & \textbf{Impedimentos} \\
+  \midrule
+  1 & Sarahy Silva & Definimos la estructura del pitch & Escribir la primera versión del guion & Ninguno \\
+  2 & Beiker Jaramillo & Revisamos el guion con las diapositivas & Ensayar el pitch completo & Los títulos del guion y de las diapositivas no coinciden \\
+  \bottomrule
+\end{tabularx}
+
+\subsection{Impedimentos y acciones}
+
+\begin{tabularx}{\textwidth}{X l l}
+  \toprule
+  \textbf{Impedimento} & \textbf{Responsable} & \textbf{Estado} \\
+  \midrule
+  Los títulos del guion y de las diapositivas no coincidían & Beiker Jaramillo & Resuelto \\
+  El deck usado en el pitch presencial no se envió al profesor & Beiker Jaramillo & Abierto \\
+  \bottomrule
+\end{tabularx}
+
+% ---------- 6. Métricas del sprint ----------
+\section{Métricas del sprint}
+
+\begin{tabularx}{\textwidth}{X c c}
+  \toprule
+  \textbf{Indicador} & \textbf{Planeado} & \textbf{Real} \\
+  \midrule
+  Puntos de historia completados & 10 & 10 \\
+  Historias completadas          & 3 & 3 \\
+  Velocidad del equipo           & 10 & 10 \\
+  \bottomrule
+\end{tabularx}
+
+% ---------- 7. Revisión del sprint ----------
+\section{Revisión del sprint}
+
+\subsection{Incrementos entregados}
+\begin{itemize}[leftmargin=1.5em]
+  \item {Pitch de nueve diapositivas presentado en clase.}
+  \item {Guion del pitch con nueve partes.}
+\end{itemize}
+
+\subsection{Retroalimentación de los interesados}
+{Comentarios del profesor (nota: 38/50, equivalente a 3,8):}
+\begin{itemize}[leftmargin=1.5em]
+  \item {La actividad breve de inicio estuvo bien; hay que saber manejarla y practicarla para que aporte valor al pitch.}
+  \item {Los indicadores de contexto y oportunidad estuvieron bien.}
+  \item {El perfilamiento del usuario estuvo bien; pidió profundizarlo en la validación.}
+  \item {Nos pasamos del tiempo: usamos casi el doble de lo esperado.}
+  \item {La propuesta de solución en cuatro pasos estuvo bien.}
+  \item {En «¿Por qué nosotros?» faltó presentar al equipo y un buen cierre.}
+  \item {No enviamos el deck (diapositivas) usado en el pitch presencial.}
+\end{itemize}
+
+\subsection{Historias no completadas}
+\begin{tabularx}{\textwidth}{c X X}
+  \toprule
+  \textbf{ID} & \textbf{Motivo} & \textbf{Acción propuesta} \\
+  \midrule
+  -- & Todas las historias se completaron. & No aplica \\
+  \bottomrule
+\end{tabularx}
+
+% ---------- 8. Retrospectiva ----------
+\section{Retrospectiva del sprint}
+
+\subsection{Qué salió bien}
+\begin{itemize}[leftmargin=1.5em]
+  \item {El pitch cubre las secciones esperadas y tiene un mensaje central fácil de recordar.}
+  \item {El guion y las diapositivas cuentan la misma historia, con un tono cercano a los jóvenes.}
+\end{itemize}
+
+\subsection{Qué se puede mejorar}
+\begin{itemize}[leftmargin=1.5em]
+  \item {Usamos casi el doble del tiempo previsto.}
+  \item {Faltó presentar al equipo y cerrar mejor.}
+  \item {Las diapositivas con datos no muestran la fuente, y el deck no se envió.}
+\end{itemize}
+
+\subsection{Acciones de mejora}
+\begin{tabularx}{\textwidth}{X l l}
+  \toprule
+  \textbf{Acción} & \textbf{Responsable} & \textbf{Fecha límite} \\
+  \midrule
+  Ensayar con cronómetro para cumplir el tiempo & Beiker Jaramillo & 21/09/2026 \\
+  Agregar una diapositiva del equipo y reforzar el cierre & Valentina Carrillo & 21/09/2026 \\
+  Citar la fuente y el año en cada diapositiva con datos & Miguel Gómez & 21/09/2026 \\
+  Enviar el deck junto con cada pitch & Beiker Jaramillo & 21/09/2026 \\
+  \bottomrule
+\end{tabularx}
+
+% ---------- 9. Aprobaciones ----------
+\section{Aprobaciones}
+
+\vspace{1cm}
+\begin{tabularx}{\textwidth}{X X}
+  \textbf{Product Owner} & \textbf{Scrum Master} \\[2cm]
+  \rule{6cm}{0.4pt} & \rule{6cm}{0.4pt} \\
+  Firma y fecha & Firma y fecha \\
+\end{tabularx}
+
+\end{document}

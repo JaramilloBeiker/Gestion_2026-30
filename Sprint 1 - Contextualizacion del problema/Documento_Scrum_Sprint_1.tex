@@ -1,0 +1,211 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------- Idioma y codificación ----------
+\usepackage[spanish,es-tabla]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+% ---------- Formato de página ----------
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{setspace}
+\setstretch{1.15}
+\usepackage{parskip}
+
+% ---------- Tablas y listas ----------
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{enumitem}
+
+% ---------- Títulos en negrita (sin color) ----------
+\usepackage{titlesec}
+\titleformat{\section}
+  {\Large\bfseries}
+  {\thesection}{0.8em}{}
+\titleformat{\subsection}
+  {\large\bfseries}
+  {\thesubsection}{0.6em}{}
+\titleformat{\subsubsection}
+  {\normalsize\bfseries}
+  {\thesubsubsection}{0.5em}{}
+\titlespacing*{\section}{0pt}{18pt}{8pt}
+
+% ---------- Encabezado y pie ----------
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textbf{Scrum --- Sprint \arabic{sprintnum}}}
+\fancyhead[R]{\small\textbf{CrediStep}}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% ---------- Número de sprint ----------
+\newcounter{sprintnum}
+\setcounter{sprintnum}{1}   % Cambie este número en cada sprint
+
+% ---------- Caja del objetivo (solo blanco y negro) ----------
+\usepackage[most]{tcolorbox}
+\newtcolorbox{objetivo}{
+  colback=white, colframe=black,
+  boxrule=0.8pt, arc=0pt,
+  left=8pt, right=8pt, top=6pt, bottom=6pt,
+  fonttitle=\bfseries, title={Objetivo del Sprint}
+}
+
+% ======================================================
+\begin{document}
+
+% ---------- Portada ----------
+\begin{center}
+  {\Huge\bfseries Documento de Sprint} \\[0.4cm]
+  {\LARGE\bfseries Sprint \arabic{sprintnum}} \\[0.3cm]
+  {\large CrediStep} \\[1.2cm]
+\end{center}
+
+\section{Información general}
+
+\begin{tabularx}{\textwidth}{>{\bfseries}l X}
+  \toprule
+  Sprint               & \arabic{sprintnum} \\
+  Proyecto             & CrediStep \\
+  Product Owner        & Víctor Hugo Vela Pinzón (profesor) \\
+  Scrum Master         & Beiker Romario Jaramillo Giraldo \\
+  Equipo de desarrollo & Laura Sofía Ortiz Gómez, Sarahy Michelle Silva Pinto, Valentina Carrillo Peñuela, Miguel Ángel Gómez López \\
+  Fecha de inicio      & 16/07/2026 \\
+  Fecha de fin         & 30/07/2026 \\
+  Duración             & 2 semanas \\
+  Capacidad del equipo & 10 puntos \\
+  \bottomrule
+\end{tabularx}
+
+% ---------- 2. Objetivo del sprint ----------
+\section{Objetivo del sprint}
+
+\begin{objetivo}
+  Documentar con fuentes oficiales el problema que enfrentan los jóvenes de 18 a 25 años para acceder al crédito, y definir a quién ayuda CrediStep.
+\end{objetivo}
+
+% ---------- 3. Backlog del sprint ----------
+\section{Backlog del sprint}
+
+\subsection{Historias de usuario seleccionadas}
+
+\begin{tabularx}{\textwidth}{c X c c c}
+  \toprule
+  \textbf{ID} & \textbf{Historia de usuario} & \textbf{Prioridad} & \textbf{Puntos} & \textbf{Estado} \\
+  \midrule
+  HU-01 & Como equipo, quiero encontrar datos oficiales sobre el acceso al crédito de los jóvenes, para respaldar el problema. & Alta & 5 & Terminada \\
+  HU-02 & Como equipo, quiero definir el problema y el usuario principal, para tener claro a quién le ayudamos. & Alta & 3 & Terminada \\
+  HU-03 & Como equipo, quiero registrar las fuentes y sus anexos, para poder verificar cada cifra. & Media & 2 & Terminada \\
+  \bottomrule
+\end{tabularx}
+
+% ---------- 4. Desglose de tareas ----------
+\section{Desglose de tareas}
+
+\begin{tabularx}{\textwidth}{c X l c c}
+  \toprule
+  \textbf{HU} & \textbf{Tarea} & \textbf{Responsable} & \textbf{Horas est.} & \textbf{Estado} \\
+  \midrule
+  HU-01 & Buscar el Reporte de Inclusión Financiera 2024 & Beiker Jaramillo & 3 & Terminada \\
+  HU-01 & Contrastar cifras con BBVA Research y Portafolio & Valentina Carrillo & 4 & Terminada \\
+  HU-02 & Redactar el problema y el usuario & Laura Ortiz & 4 & Terminada \\
+  HU-02 & Redactar la oportunidad y la propuesta & Sarahy Silva & 3 & Terminada \\
+  HU-03 & Organizar fuentes y anexos & Miguel Gómez & 2 & Terminada \\
+  \bottomrule
+\end{tabularx}
+
+% ---------- 5. Seguimiento diario (Daily Scrum) ----------
+\section{Seguimiento diario (Daily Scrum)}
+
+\begin{tabularx}{\textwidth}{c l X X X}
+  \toprule
+  \textbf{Día} & \textbf{Miembro} & \textbf{Ayer} & \textbf{Hoy} & \textbf{Impedimentos} \\
+  \midrule
+  1 & Beiker Jaramillo & Revisamos la idea inicial del problema & Buscar los reportes oficiales de inclusión financiera & Ninguno \\
+  2 & Valentina Carrillo & Comparamos cifras de crédito con otros estudios & Revisar cada cifra contra el informe original & El informe usa el grupo de 41 a 60 años, no de 41 a 65 \\
+  \bottomrule
+\end{tabularx}
+
+\subsection{Impedimentos y acciones}
+
+\begin{tabularx}{\textwidth}{X l l}
+  \toprule
+  \textbf{Impedimento} & \textbf{Responsable} & \textbf{Estado} \\
+  \midrule
+  Rango de edad mal citado en una cifra & Valentina Carrillo & Resuelto \\
+  \bottomrule
+\end{tabularx}
+
+% ---------- 6. Métricas del sprint ----------
+\section{Métricas del sprint}
+
+\begin{tabularx}{\textwidth}{X c c}
+  \toprule
+  \textbf{Indicador} & \textbf{Planeado} & \textbf{Real} \\
+  \midrule
+  Puntos de historia completados & 10 & 10 \\
+  Historias completadas          & 3 & 3 \\
+  Velocidad del equipo           & 10 & 10 \\
+  \bottomrule
+\end{tabularx}
+
+% ---------- 7. Revisión del sprint ----------
+\section{Revisión del sprint}
+
+\subsection{Incrementos entregados}
+\begin{itemize}[leftmargin=1.5em]
+  \item {Documento de contextualización con cifras y fuentes verificadas.}
+  \item {Descripción del usuario y de la propuesta inicial de CrediStep.}
+\end{itemize}
+
+\subsection{Retroalimentación de los interesados}
+{Sin comentarios del profesor registrados para este sprint.}
+
+\subsection{Historias no completadas}
+\begin{tabularx}{\textwidth}{c X X}
+  \toprule
+  \textbf{ID} & \textbf{Motivo} & \textbf{Acción propuesta} \\
+  \midrule
+  -- & Todas las historias se completaron. & No aplica \\
+  \bottomrule
+\end{tabularx}
+
+% ---------- 8. Retrospectiva ----------
+\section{Retrospectiva del sprint}
+
+\subsection{Qué salió bien}
+\begin{itemize}[leftmargin=1.5em]
+  \item {Encontramos datos oficiales que respaldan el problema: solo el 22 \% de los jóvenes de 18 a 25 años accede a crédito, frente al 35,5 \% general.}
+  \item {El problema y el usuario quedaron claros y bien explicados.}
+\end{itemize}
+
+\subsection{Qué se puede mejorar}
+\begin{itemize}[leftmargin=1.5em]
+  \item {La contextualización se documentó después del pitch, cuando debía ser su base.}
+  \item {Una cifra se presentó con un rango de edad distinto al del informe (41 a 65 años en lugar de 41 a 60).}
+\end{itemize}
+
+\subsection{Acciones de mejora}
+\begin{tabularx}{\textwidth}{X l l}
+  \toprule
+  \textbf{Acción} & \textbf{Responsable} & \textbf{Fecha límite} \\
+  \midrule
+  Documentar el problema y sus fuentes antes del pitch & Laura Ortiz & 31/08/2026 \\
+  Revisar cada cifra contra el informe original & Valentina Carrillo & 31/08/2026 \\
+  Guardar los PDF de las fuentes en la carpeta del sprint & Miguel Gómez & 31/08/2026 \\
+  \bottomrule
+\end{tabularx}
+
+% ---------- 9. Aprobaciones ----------
+\section{Aprobaciones}
+
+\vspace{1cm}
+\begin{tabularx}{\textwidth}{X X}
+  \textbf{Product Owner} & \textbf{Scrum Master} \\[2cm]
+  \rule{6cm}{0.4pt} & \rule{6cm}{0.4pt} \\
+  Firma y fecha & Firma y fecha \\
+\end{tabularx}
+
+\end{document}

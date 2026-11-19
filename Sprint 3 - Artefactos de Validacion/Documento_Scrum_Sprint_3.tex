@@ -1,0 +1,218 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------- Idioma y codificación ----------
+\usepackage[spanish,es-tabla]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+% ---------- Formato de página ----------
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{setspace}
+\setstretch{1.15}
+\usepackage{parskip}
+
+% ---------- Tablas y listas ----------
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{enumitem}
+
+% ---------- Títulos en negrita (sin color) ----------
+\usepackage{titlesec}
+\titleformat{\section}
+  {\Large\bfseries}
+  {\thesection}{0.8em}{}
+\titleformat{\subsection}
+  {\large\bfseries}
+  {\thesubsection}{0.6em}{}
+\titleformat{\subsubsection}
+  {\normalsize\bfseries}
+  {\thesubsubsection}{0.5em}{}
+\titlespacing*{\section}{0pt}{18pt}{8pt}
+
+% ---------- Encabezado y pie ----------
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textbf{Scrum --- Sprint \arabic{sprintnum}}}
+\fancyhead[R]{\small\textbf{CrediStep}}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% ---------- Número de sprint ----------
+\newcounter{sprintnum}
+\setcounter{sprintnum}{3}   % Cambie este número en cada sprint
+
+% ---------- Caja del objetivo (solo blanco y negro) ----------
+\usepackage[most]{tcolorbox}
+\newtcolorbox{objetivo}{
+  colback=white, colframe=black,
+  boxrule=0.8pt, arc=0pt,
+  left=8pt, right=8pt, top=6pt, bottom=6pt,
+  fonttitle=\bfseries, title={Objetivo del Sprint}
+}
+
+% ======================================================
+\begin{document}
+
+% ---------- Portada ----------
+\begin{center}
+  {\Huge\bfseries Documento de Sprint} \\[0.4cm]
+  {\LARGE\bfseries Sprint \arabic{sprintnum}} \\[0.3cm]
+  {\large CrediStep} \\[1.2cm]
+\end{center}
+
+\section{Información general}
+
+\begin{tabularx}{\textwidth}{>{\bfseries}l X}
+  \toprule
+  Sprint               & \arabic{sprintnum} \\
+  Proyecto             & CrediStep \\
+  Product Owner        & Víctor Hugo Vela Pinzón (profesor) \\
+  Scrum Master         & Beiker Romario Jaramillo Giraldo \\
+  Equipo de desarrollo & Laura Sofía Ortiz Gómez, Sarahy Michelle Silva Pinto, Valentina Carrillo Peñuela, Miguel Ángel Gómez López \\
+  Fecha de inicio      & 01/09/2026 \\
+  Fecha de fin         & 21/09/2026 \\
+  Duración             & 3 semanas \\
+  Capacidad del equipo & 13 puntos \\
+  \bottomrule
+\end{tabularx}
+
+% ---------- 2. Objetivo del sprint ----------
+\section{Objetivo del sprint}
+
+\begin{objetivo}
+  Comprobar con una encuesta a 126 jóvenes si la falta de orientación para el crédito es un problema real para ellos.
+\end{objetivo}
+
+% ---------- 3. Backlog del sprint ----------
+\section{Backlog del sprint}
+
+\subsection{Historias de usuario seleccionadas}
+
+\begin{tabularx}{\textwidth}{c X c c c}
+  \toprule
+  \textbf{ID} & \textbf{Historia de usuario} & \textbf{Prioridad} & \textbf{Puntos} & \textbf{Estado} \\
+  \midrule
+  HU-01 & Como equipo, quiero diseñar una encuesta corta sobre el conocimiento y la experiencia con el crédito, para medir el problema. & Alta & 3 & Terminada \\
+  HU-02 & Como equipo, quiero aplicar la encuesta a jóvenes, para reunir una muestra suficiente. & Alta & 5 & Terminada \\
+  HU-03 & Como equipo, quiero analizar los resultados y validar el supuesto inicial, para decidir si seguimos con la idea. & Alta & 5 & Terminada \\
+  \bottomrule
+\end{tabularx}
+
+% ---------- 4. Desglose de tareas ----------
+\section{Desglose de tareas}
+
+\begin{tabularx}{\textwidth}{c X l c c}
+  \toprule
+  \textbf{HU} & \textbf{Tarea} & \textbf{Responsable} & \textbf{Horas est.} & \textbf{Estado} \\
+  \midrule
+  HU-01 & Definir los bloques de la encuesta & Sarahy Silva & 2 & Terminada \\
+  HU-01 & Redactar las preguntas & Valentina Carrillo & 4 & Terminada \\
+  HU-02 & Montar el formulario y difundirlo & Miguel Gómez & 8 & Terminada \\
+  HU-03 & Calcular porcentajes y gráficas & Beiker Jaramillo & 5 & Terminada \\
+  HU-03 & Escribir la validación del supuesto & Laura Ortiz & 3 & Terminada \\
+  \bottomrule
+\end{tabularx}
+
+% ---------- 5. Seguimiento diario (Daily Scrum) ----------
+\section{Seguimiento diario (Daily Scrum)}
+
+\begin{tabularx}{\textwidth}{c l X X X}
+  \toprule
+  \textbf{Día} & \textbf{Miembro} & \textbf{Ayer} & \textbf{Hoy} & \textbf{Impedimentos} \\
+  \midrule
+  1 & Valentina Carrillo & Definimos los bloques de preguntas & Redactar la encuesta completa & Ninguno \\
+  2 & Miguel Gómez & Revisamos la primera versión del formulario & Publicar el formulario & La mayoría de respuestas vienen de jóvenes de 18 a 20 años \\
+  \bottomrule
+\end{tabularx}
+
+\subsection{Impedimentos y acciones}
+
+\begin{tabularx}{\textwidth}{X l l}
+  \toprule
+  \textbf{Impedimento} & \textbf{Responsable} & \textbf{Estado} \\
+  \midrule
+  La muestra se concentró en jóvenes de 18 a 20 años & Miguel Gómez & Abierto \\
+  No se envió el Excel/CSV exportado con el detalle de las respuestas & Miguel Gómez & Abierto \\
+  \bottomrule
+\end{tabularx}
+
+% ---------- 6. Métricas del sprint ----------
+\section{Métricas del sprint}
+
+\begin{tabularx}{\textwidth}{X c c}
+  \toprule
+  \textbf{Indicador} & \textbf{Planeado} & \textbf{Real} \\
+  \midrule
+  Puntos de historia completados & 13 & 13 \\
+  Historias completadas          & 3 & 3 \\
+  Velocidad del equipo           & 13 & 13 \\
+  \bottomrule
+\end{tabularx}
+
+% ---------- 7. Revisión del sprint ----------
+\section{Revisión del sprint}
+
+\subsection{Incrementos entregados}
+\begin{itemize}[leftmargin=1.5em]
+  \item {Encuesta aplicada a 126 jóvenes.}
+  \item {Documento de artefactos de validación con el análisis de resultados.}
+\end{itemize}
+
+\subsection{Retroalimentación de los interesados}
+{Comentarios del profesor (nota: 46/50, equivalente a 4,6):}
+\begin{itemize}[leftmargin=1.5em]
+  \item {El trabajo muestra buena comprensión de cómo definir y aplicar artefactos de validación.}
+  \item {Destacó la presentación, las preguntas y el análisis de cada una, junto con hallazgos y conclusiones útiles para conocer el problema, caracterizar el mercado y enfocar el MVP.}
+  \item {Faltaron las fechas de aplicación de la encuesta.}
+  \item {Faltó enviar el Excel/CSV exportado de la plataforma, con el detalle de cada respuesta (fecha y hora de diligenciamiento), como evidencia de que la validación se aplicó. Hay que enviarlo en la entrega final.}
+\end{itemize}
+
+\subsection{Historias no completadas}
+\begin{tabularx}{\textwidth}{c X X}
+  \toprule
+  \textbf{ID} & \textbf{Motivo} & \textbf{Acción propuesta} \\
+  \midrule
+  -- & Todas las historias se completaron. & No aplica \\
+  \bottomrule
+\end{tabularx}
+
+% ---------- 8. Retrospectiva ----------
+\section{Retrospectiva del sprint}
+
+\subsection{Qué salió bien}
+\begin{itemize}[leftmargin=1.5em]
+  \item {Se reunieron 126 respuestas, y el análisis de cada pregunta quedó completo.}
+  \item {Los resultados dieron cifras claras: el 54 \% se sentiría inseguro al pedir su primer crédito, y el 35,7 \% ya evitó pedirlo.}
+\end{itemize}
+
+\subsection{Qué se puede mejorar}
+\begin{itemize}[leftmargin=1.5em]
+  \item {No incluimos las fechas de aplicación ni el archivo exportado de respuestas.}
+  \item {La encuesta no preguntó por ocupación ni por ciudad, y la mayoría de las respuestas vienen de jóvenes de 18 a 20 años.}
+\end{itemize}
+
+\subsection{Acciones de mejora}
+\begin{tabularx}{\textwidth}{X l l}
+  \toprule
+  \textbf{Acción} & \textbf{Responsable} & \textbf{Fecha límite} \\
+  \midrule
+  Enviar el Excel/CSV de respuestas en la entrega final & Miguel Gómez & 25/11/2026 \\
+  Agregar las fechas de aplicación al documento & Laura Ortiz & 25/11/2026 \\
+  Incluir ocupación y ciudad en la próxima encuesta & Valentina Carrillo & 25/11/2026 \\
+  \bottomrule
+\end{tabularx}
+
+% ---------- 9. Aprobaciones ----------
+\section{Aprobaciones}
+
+\vspace{1cm}
+\begin{tabularx}{\textwidth}{X X}
+  \textbf{Product Owner} & \textbf{Scrum Master} \\[2cm]
+  \rule{6cm}{0.4pt} & \rule{6cm}{0.4pt} \\
+  Firma y fecha & Firma y fecha \\
+\end{tabularx}
+
+\end{document}

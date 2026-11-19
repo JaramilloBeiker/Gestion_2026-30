@@ -1,0 +1,215 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------- Idioma y codificación ----------
+\usepackage[spanish,es-tabla]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+% ---------- Formato de página ----------
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{setspace}
+\setstretch{1.15}
+\usepackage{parskip}
+
+% ---------- Tablas y listas ----------
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{enumitem}
+
+% ---------- Títulos en negrita (sin color) ----------
+\usepackage{titlesec}
+\titleformat{\section}
+  {\Large\bfseries}
+  {\thesection}{0.8em}{}
+\titleformat{\subsection}
+  {\large\bfseries}
+  {\thesubsection}{0.6em}{}
+\titleformat{\subsubsection}
+  {\normalsize\bfseries}
+  {\thesubsubsection}{0.5em}{}
+\titlespacing*{\section}{0pt}{18pt}{8pt}
+
+% ---------- Encabezado y pie ----------
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textbf{Scrum --- Sprint \arabic{sprintnum}}}
+\fancyhead[R]{\small\textbf{CrediStep}}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% ---------- Número de sprint ----------
+\newcounter{sprintnum}
+\setcounter{sprintnum}{9}   % Cambie este número en cada sprint
+
+% ---------- Caja del objetivo (solo blanco y negro) ----------
+\usepackage[most]{tcolorbox}
+\newtcolorbox{objetivo}{
+  colback=white, colframe=black,
+  boxrule=0.8pt, arc=0pt,
+  left=8pt, right=8pt, top=6pt, bottom=6pt,
+  fonttitle=\bfseries, title={Objetivo del Sprint}
+}
+
+% ======================================================
+\begin{document}
+
+% ---------- Portada ----------
+\begin{center}
+  {\Huge\bfseries Documento de Sprint} \\[0.4cm]
+  {\LARGE\bfseries Sprint \arabic{sprintnum}} \\[0.3cm]
+  {\large CrediStep} \\[1.2cm]
+\end{center}
+
+\section{Información general}
+
+\begin{tabularx}{\textwidth}{>{\bfseries}l X}
+  \toprule
+  Sprint               & \arabic{sprintnum} \\
+  Proyecto             & CrediStep \\
+  Product Owner        & Víctor Hugo Vela Pinzón (profesor) \\
+  Scrum Master         & Beiker Romario Jaramillo Giraldo \\
+  Equipo de desarrollo & Laura Sofía Ortiz Gómez, Sarahy Michelle Silva Pinto, Valentina Carrillo Peñuela, Miguel Ángel Gómez López \\
+  Fecha de inicio      & 03/11/2026 \\
+  Fecha de fin         & 16/11/2026 \\
+  Duración             & 2 semanas \\
+  Capacidad del equipo & 18 puntos \\
+  \bottomrule
+\end{tabularx}
+
+% ---------- 2. Objetivo del sprint ----------
+\section{Objetivo del sprint}
+
+\begin{objetivo}
+  Construir un MVP funcional de CrediStep, documentar sus pantallas y su flujo, y actualizar el mercado con el comentario del profesor.
+\end{objetivo}
+
+% ---------- 3. Backlog del sprint ----------
+\section{Backlog del sprint}
+
+\subsection{Historias de usuario seleccionadas}
+
+\begin{tabularx}{\textwidth}{c X c c c}
+  \toprule
+  \textbf{ID} & \textbf{Historia de usuario} & \textbf{Prioridad} & \textbf{Puntos} & \textbf{Estado} \\
+  \midrule
+  HU-01 & Como joven, quiero hacer un diagnóstico y recibir una ruta de pasos, para saber por dónde empezar. & Alta & 5 & Terminada \\
+  HU-02 & Como joven, quiero lecciones cortas y simuladores, para entender el crédito antes de usarlo. & Alta & 5 & Terminada \\
+  HU-03 & Como universidad, quiero un panel con métricas anónimas de mis estudiantes, para ver cómo avanzan. & Media & 3 & Terminada \\
+  HU-04 & Como equipo, quiero documentar las pantallas y el flujo del MVP, para entregarlo como lo pide el curso. & Alta & 3 & Terminada \\
+  HU-05 & Como equipo, quiero recalcular el mercado, para responder al comentario del profesor en el segundo pitch. & Media & 2 & Terminada \\
+  \bottomrule
+\end{tabularx}
+
+% ---------- 4. Desglose de tareas ----------
+\section{Desglose de tareas}
+
+\begin{tabularx}{\textwidth}{c X l c c}
+  \toprule
+  \textbf{HU} & \textbf{Tarea} & \textbf{Responsable} & \textbf{Horas est.} & \textbf{Estado} \\
+  \midrule
+  HU-01 & Definir el flujo y las pantallas del MVP & Valentina Carrillo & 4 & Terminada \\
+  HU-02 & Desarrollar diagnóstico, ruta, lecciones y simuladores & Beiker Jaramillo & 16 & Terminada \\
+  HU-03 & Probar el flujo completo, incluido el panel institucional & Sarahy Silva & 4 & Terminada \\
+  HU-04 & Redactar la documentación de la aplicación & Miguel Gómez & 6 & Terminada \\
+  HU-05 & Recalcular TAM, SAM y SOM (versión 2) & Laura Ortiz & 5 & Terminada \\
+  \bottomrule
+\end{tabularx}
+
+% ---------- 5. Seguimiento diario (Daily Scrum) ----------
+\section{Seguimiento diario (Daily Scrum)}
+
+\begin{tabularx}{\textwidth}{c l X X X}
+  \toprule
+  \textbf{Día} & \textbf{Miembro} & \textbf{Ayer} & \textbf{Hoy} & \textbf{Impedimentos} \\
+  \midrule
+  1 & Valentina Carrillo & Revisamos los prototipos a mano de cada uno & Definir el flujo del MVP & Ninguno \\
+  2 & Laura Ortiz & Revisamos el comentario del profesor sobre el mercado & Ampliar el público a jóvenes de 18 a 30 años & La hoja financiera todavía usa 100 suscriptores \\
+  \bottomrule
+\end{tabularx}
+
+\subsection{Impedimentos y acciones}
+
+\begin{tabularx}{\textwidth}{X l l}
+  \toprule
+  \textbf{Impedimento} & \textbf{Responsable} & \textbf{Estado} \\
+  \midrule
+  La hoja financiera no coincide con el mercado de la versión 2 & Laura Ortiz & Abierto \\
+  \bottomrule
+\end{tabularx}
+
+% ---------- 6. Métricas del sprint ----------
+\section{Métricas del sprint}
+
+\begin{tabularx}{\textwidth}{X c c}
+  \toprule
+  \textbf{Indicador} & \textbf{Planeado} & \textbf{Real} \\
+  \midrule
+  Puntos de historia completados & 18 & 18 \\
+  Historias completadas          & 5 & 5 \\
+  Velocidad del equipo           & 18 & 18 \\
+  \bottomrule
+\end{tabularx}
+
+% ---------- 7. Revisión del sprint ----------
+\section{Revisión del sprint}
+
+\subsection{Incrementos entregados}
+\begin{itemize}[leftmargin=1.5em]
+  \item {Aplicación web funcional con diagnóstico, ruta, lecciones, simuladores, metas, recordatorios y panel institucional.}
+  \item {Documento «Cómo funciona la aplicación», con las pantallas y el flujo.}
+  \item {Análisis de mercado, versión 2: TAM de 11,6 millones, SAM de 4,2 millones y SOM de 439 suscriptores de pago.}
+\end{itemize}
+
+\subsection{Retroalimentación de los interesados}
+{Sin comentarios del profesor registrados todavía para este sprint. El MVP se revisa con los entregables finales.}
+
+\subsection{Historias no completadas}
+\begin{tabularx}{\textwidth}{c X X}
+  \toprule
+  \textbf{ID} & \textbf{Motivo} & \textbf{Acción propuesta} \\
+  \midrule
+  -- & Todas las historias se completaron. & No aplica \\
+  \bottomrule
+\end{tabularx}
+
+% ---------- 8. Retrospectiva ----------
+\section{Retrospectiva del sprint}
+
+\subsection{Qué salió bien}
+\begin{itemize}[leftmargin=1.5em]
+  \item {El MVP va más allá del inicio de sesión y el perfil: cubre las funciones principales de la propuesta.}
+  \item {El mercado quedó calculado a escala nacional y con una conversión a pago respaldada.}
+\end{itemize}
+
+\subsection{Qué se puede mejorar}
+\begin{itemize}[leftmargin=1.5em]
+  \item {La aplicación corre en el computador local y todavía no se ha probado con usuarios reales.}
+  \item {CrediStep Plus funciona en modo demostración, sin pasarela de pagos.}
+  \item {La hoja financiera quedó desactualizada frente al nuevo mercado.}
+\end{itemize}
+
+\subsection{Acciones de mejora}
+\begin{tabularx}{\textwidth}{X l l}
+  \toprule
+  \textbf{Acción} & \textbf{Responsable} & \textbf{Fecha límite} \\
+  \midrule
+  Preparar una demo de 30 segundos para el pitch final & Beiker Jaramillo & 24/11/2026 \\
+  Entregar el prototipo en una carpeta aparte, con su documentación & Miguel Gómez & 25/11/2026 \\
+  Actualizar la hoja financiera con el mercado de la versión 2 & Laura Ortiz & 24/11/2026 \\
+  \bottomrule
+\end{tabularx}
+
+% ---------- 9. Aprobaciones ----------
+\section{Aprobaciones}
+
+\vspace{1cm}
+\begin{tabularx}{\textwidth}{X X}
+  \textbf{Product Owner} & \textbf{Scrum Master} \\[2cm]
+  \rule{6cm}{0.4pt} & \rule{6cm}{0.4pt} \\
+  Firma y fecha & Firma y fecha \\
+\end{tabularx}
+
+\end{document}

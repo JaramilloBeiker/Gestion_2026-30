@@ -1,0 +1,328 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------- Idioma y codificación ----------
+\usepackage[spanish,es-tabla]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+% ---------- Formato de página ----------
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{setspace}
+\setstretch{1.15}
+\usepackage{parskip}
+
+% ---------- Tablas y listas ----------
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{enumitem}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+% ---------- Títulos en negrita (sin color) ----------
+\usepackage{titlesec}
+\titleformat{\section}
+  {\Large\bfseries}
+  {\thesection}{0.8em}{}
+\titleformat{\subsection}
+  {\large\bfseries}
+  {\thesubsection}{0.6em}{}
+\titlespacing*{\section}{0pt}{18pt}{8pt}
+
+% ---------- Encabezado y pie ----------
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textbf{Plan de negocios inicial}}
+\fancyhead[R]{\small\textbf{CrediStep}}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% ---------- Caja de resumen (solo blanco y negro) ----------
+\usepackage[most]{tcolorbox}
+\newtcolorbox{resumen}{
+  colback=white, colframe=black,
+  boxrule=0.8pt, arc=0pt,
+  left=8pt, right=8pt, top=6pt, bottom=6pt,
+  fonttitle=\bfseries, title={La idea en pocas palabras}
+}
+
+\begin{document}
+\sloppy
+
+% ---------- Portada ----------
+\begin{center}
+  {\Huge\bfseries Plan de negocios inicial} \\[0.4cm]
+  {\LARGE\bfseries CrediStep} \\[0.3cm]
+  {\large Construye hoy el historial que necesitarás mañana} \\[0.8cm]
+\end{center}
+
+\begin{tabularx}{\textwidth}{>{\bfseries}l X}
+  \toprule
+  Proyecto     & CrediStep, un GPS financiero para jóvenes \\
+  Asignatura   & Gestión de Innovación en TI, Pontificia Universidad Javeriana \\
+  Equipo       & Beiker Romario Jaramillo Giraldo, Laura Sofía Ortiz Gómez, Sarahy Michelle Silva Pinto, Valentina Carrillo Peñuela, Miguel Ángel Gómez López \\
+  Versión      & 1.0 \\
+  Fecha        & Noviembre de 2026 \\
+  \bottomrule
+\end{tabularx}
+
+% ---------- 1 ----------
+\section{Resumen ejecutivo}
+
+\begin{resumen}
+  CrediStep es una aplicación que acompaña a los jóvenes colombianos antes de su primer
+  crédito. Les hace un diagnóstico, les traza una ruta de pasos, les enseña con lecciones
+  cortas y simuladores, y les muestra qué tan preparados están. No les dice qué comprar;
+  les enseña cómo avanzar.
+\end{resumen}
+
+En Colombia, solo el 19,4 \% de los jóvenes de 18 a 25 años tiene un crédito formal [1]. Nuestra encuesta a 126 jóvenes mostró que el 54 \% se sentiría inseguro al pedir su primer crédito sin orientación y que el 85,7 \% quiere una herramienta que se lo explique de forma sencilla.
+
+El negocio tiene dos fuentes de ingreso: una suscripción individual, CrediStep Plus, de \$20.000 al mes, y licencias para universidades. Estimamos un mercado atendible de 4,2 millones de jóvenes y una meta de 439 suscriptores de pago en el primer año, que equivalen a unos \$105 millones. Con esa meta el primer año queda prácticamente en equilibrio, y el resultado es positivo desde el segundo.
+
+Hoy tenemos el problema validado, el modelo de negocio definido y un MVP web en funcionamiento. El siguiente paso es un piloto con la Pontificia Universidad Javeriana.
+
+\begin{tabularx}{\textwidth}{X r}
+  \toprule
+  \textbf{Indicador} & \textbf{Valor} \\
+  \midrule
+  Mercado total (TAM), jóvenes de 18 a 30 años & 11,6 millones \\
+  Mercado atendible (SAM) & 4,2 millones \\
+  Suscriptores de pago en el año 1 (SOM) & 439 \\
+  Ingresos del año 1 & \$105,4 millones \\
+  Inversión inicial & \$5 millones \\
+  Punto de equilibrio del año 1 & 440 suscriptores \\
+  \bottomrule
+\end{tabularx}
+
+% ---------- 2 ----------
+\section{Problema y oportunidad}
+
+Entre los 18 y los 25 años llegan los primeros ingresos y las primeras decisiones sobre tarjetas y créditos. Casi nadie enseña a tomarlas: se aprende de la familia, del banco que vende el producto o del error. Y un error temprano, como una mora, puede cerrar puertas años después.
+
+El crédito llega temprano, pero la orientación llega tarde. Mientras el 19,4 \% de los jóvenes de 18 a 25 años tiene crédito formal, en el grupo de 26 a 40 años la cifra sube a 37,5 \% [1][2]. Ese salto ocurre sin acompañamiento.
+
+La oportunidad está en el tiempo que hay antes del primer crédito grande. En ese periodo se pueden formar hábitos y construir historial, y hoy ningún producto acompaña al joven paso a paso durante ese tramo.
+
+% ---------- 3 ----------
+\section{Solución}
+
+CrediStep funciona como un GPS financiero, en cuatro pasos:
+
+\begin{tabularx}{\textwidth}{c P{2.8cm} Y}
+  \toprule
+  \textbf{Paso} & \textbf{Nombre} & \textbf{Qué hace} \\
+  \midrule
+  1 & Diagnóstico & Preguntas cortas sobre la situación del joven. El resultado es un índice de preparación crediticia. \\
+  2 & Ruta & Una lista de pasos concretos, en orden, según su situación: universitario, primer empleo o independiente. \\
+  3 & Aprende y simula & Lecciones cortas con quiz, y simuladores de cuota, de uso del cupo y de atrasos. \\
+  4 & Progreso & Metas de ahorro, recordatorios de pago, puntos y racha, y el avance del índice. \\
+  \bottomrule
+\end{tabularx}
+
+La aplicación nunca recomienda bancos, marcas ni productos específicos. Explica tipos de productos y qué revisar antes de tomarlos. Esa neutralidad es parte de la propuesta de valor.
+
+\subsection{Estado del producto}
+
+El MVP es una aplicación web que ya funciona. Incluye diagnóstico, ruta, lecciones, simuladores, metas, recordatorios, un asistente de preguntas frecuentes y un panel para la universidad con métricas anónimas de sus estudiantes. Sus límites actuales son tres: corre en un computador local, el plan Plus se activa en modo demostración, sin pasarela de pagos, y todavía no se ha probado con usuarios reales.
+
+% ---------- 4 ----------
+\newpage
+\section{Validación}
+
+Aplicamos una encuesta a 126 jóvenes para comprobar si el problema era real. Los resultados principales fueron:
+
+\begin{tabularx}{\textwidth}{X r}
+  \toprule
+  \textbf{Hallazgo} & \textbf{Resultado} \\
+  \midrule
+  Se sentiría inseguro al tomar su primer crédito sin orientación & 54 \% \\
+  Ya evitó pedir un crédito por no saber cómo funcionaba & 35,7 \% \\
+  Se ubicó en los niveles más bajos de preparación & 40,5 \% \\
+  Tiene interés alto o muy alto en una herramienta de orientación & 85,7 \% \\
+  \bottomrule
+\end{tabularx}
+
+La encuesta tiene dos límites que conviene decir: la mayoría de las respuestas son de jóvenes de 18 a 20 años, y no se preguntó por ocupación ni por ciudad. Además, el interés declarado no equivale a disposición de pago. Por eso el plan no usa el 85,7 \% para proyectar ingresos, sino una tasa de conversión de la industria.
+
+% ---------- 5 ----------
+\section{Mercado}
+
+El público objetivo son jóvenes de 18 a 30 años que están empezando su vida crediticia: universitarios, jóvenes con su primer empleo, trabajadores independientes y jóvenes profesionales.
+
+\begin{tabularx}{\textwidth}{l X r}
+  \toprule
+  \textbf{Nivel} & \textbf{Definición} & \textbf{Usuarios} \\
+  \midrule
+  TAM & Jóvenes de 18 a 30 años en Colombia [3] & 11.580.726 \\
+  SAM & Viven en ciudades, tienen internet, tienen ingresos o estudian, y aún no tienen crédito formal & 4.182.110 \\
+  SOM & Suscriptores de pago en el primer año & 439 \\
+  \bottomrule
+\end{tabularx}
+
+El SOM se calcula así: llegar al 0,5 \% del mercado atendible da unos 20.900 registros en la versión gratuita, y de ellos el 2,1 \% pasa a pago, que es la conversión mediana de las aplicaciones con modelo freemium [4]. El alcance de 0,5 \% es un supuesto del equipo, fijado para llegar a la meta de ingresos; es la cifra que más pesa en el plan y la primera que debe medirse en el piloto. El detalle está en el documento de análisis de mercado, versión 2.
+
+% ---------- 6 ----------
+\newpage
+\section{Competencia y diferenciación}
+
+No encontramos en Colombia un producto que acompañe al joven antes del primer crédito. Lo que existe hoy cubre partes del problema:
+
+\begin{tabularx}{\textwidth}{P{2.9cm} Y Y}
+  \toprule
+  \textbf{Alternativa} & \textbf{Qué ofrece} & \textbf{Qué deja sin cubrir} \\
+  \midrule
+  Midatacrédito (DataCrédito Experian) & Consulta del historial y del puntaje, alertas y contenido educativo. Sus planes de pago empezaban en \$19.400 al mes en 2024 [5][6]. & Sirve sobre todo a quien ya tiene historial. No traza una ruta para quien empieza. \\
+  Bancos y \textit{fintech} & Blogs y contenidos de educación financiera, gratuitos. & Quien educa es quien vende el producto. No hay seguimiento del progreso. \\
+  Familia y redes sociales & Consejos cercanos y gratuitos. & Información dispersa y sin verificar. En la encuesta, la familia fue la fuente más usada. \\
+  \bottomrule
+\end{tabularx}
+
+CrediStep se diferencia en tres cosas: se enfoca en el momento anterior al primer crédito, es neutral porque no vende productos financieros, y convierte la educación en una ruta con progreso medible. El riesgo es que un competidor con más recursos, como una central de riesgo o un banco digital, lance algo parecido. Nuestra defensa es la alianza con universidades y un contenido pensado para jóvenes.
+
+% ---------- 7 ----------
+\section{Modelo de negocio}
+
+\begin{tabularx}{\textwidth}{P{2.6cm} P{3.2cm} Y}
+  \toprule
+  \textbf{Plan} & \textbf{Precio} & \textbf{Qué incluye} \\
+  \midrule
+  Gratis & \$0 & Diagnóstico, ruta, lecciones esenciales, simuladores básicos y hasta dos metas. Es la puerta de entrada. \\
+  CrediStep Plus & \$20.000 al mes o \$200.000 al año & Simulador de puntaje, tabla de amortización completa, lecciones avanzadas y metas ilimitadas. \\
+  Licencia institucional & Por definir & Plus para los estudiantes de la universidad y un panel con métricas anónimas. \\
+  \bottomrule
+\end{tabularx}
+
+El cliente de la suscripción es el mismo joven. El cliente de la licencia es la universidad, que la ofrece a sus estudiantes como parte de su bienestar financiero. La licencia todavía no tiene precio, así que este plan no cuenta sus ingresos: todo lo que aporte es adicional a lo proyectado.
+
+Los recursos clave son el equipo de desarrollo, el contenido educativo y la alianza con universidades. Los costos principales son la nómina, la infraestructura en la nube y el mercadeo.
+
+% ---------- 8 ----------
+\section{Estrategia de mercadeo y ventas}
+
+\begin{itemize}[leftmargin=1.5em]
+  \item \textbf{Canal del producto.} La aplicación web, que ya se adapta al celular. Después, las tiendas de aplicaciones de Android y iOS.
+  \item \textbf{Universidades.} Empezamos con la Javeriana. La alianza da la credibilidad que una aplicación nueva no tiene por sí sola, y concentra a muchos jóvenes en un solo lugar.
+  \item \textbf{Redes sociales y creadores de contenido.} Contenido corto y cercano, en los formatos que los jóvenes ya usan.
+  \item \textbf{Conversión a pago.} El plan gratuito resuelve lo esencial. Plus se ofrece cuando el usuario ya avanzó en su ruta y quiere simular su puntaje o planear un crédito.
+  \item \textbf{Retención.} Recordatorios de pago, metas, puntos y racha, para que el joven vuelva cada semana.
+\end{itemize}
+
+El presupuesto de mercadeo es de \$5 millones al año en los dos primeros años y de \$10 millones desde el tercero. Es un presupuesto pequeño frente a la meta de 20.900 registros, así que la adquisición depende sobre todo de canales sin costo directo: campus, voz a voz y contenido propio.
+
+% ---------- 9 ----------
+\section{Equipo y operación}
+
+\begin{tabularx}{\textwidth}{l X}
+  \toprule
+  \textbf{Integrante} & \textbf{Rol} \\
+  \midrule
+  Beiker Jaramillo & Scrum Master \\
+  Laura Ortiz & Desarrolladora \textit{full-stack} \\
+  Sarahy Silva & Diseñadora UX/UI \\
+  Valentina Carrillo & Ingeniera de QA \\
+  Miguel Gómez & Investigación y validación \\
+  \bottomrule
+\end{tabularx}
+
+Somos cinco estudiantes de Ingeniería de Sistemas. Conocemos el problema porque lo vivimos, y tenemos la capacidad técnica para construir el producto. Nos falta una persona con formación financiera que revise el contenido sobre tasas y normas antes de publicarlo; la buscaremos como asesora durante el piloto.
+
+La aplicación está construida con FastAPI en el servidor y Vue en la interfaz. Para operar con usuarios reales debe pasar a la nube, con una base de datos PostgreSQL, y sumar una pasarela de pagos.
+
+% ---------- 10 ----------
+\section{Plan financiero}
+
+\subsection{Supuestos}
+
+\begin{tabularx}{\textwidth}{X r}
+  \toprule
+  \textbf{Supuesto} & \textbf{Valor} \\
+  \midrule
+  Ingreso anual por suscriptor Plus (\$20.000 al mes) & \$240.000 \\
+  Suscriptores de pago en el año 1 & 439 \\
+  Crecimiento de suscriptores en los años 2, 3 y 4 & 10 \%, 30 \% y 60 \% \\
+  Inversión inicial, aportada por el equipo & \$5 millones \\
+  Nómina del año 1 & \$90 millones \\
+  Infraestructura y tiendas de aplicaciones, año 1 & \$10,6 millones \\
+  Mercadeo, año 1 & \$5 millones \\
+  \bottomrule
+\end{tabularx}
+
+Los costos y las tasas de crecimiento vienen de la hoja de simulación financiera del proyecto. Los suscriptores y el precio vienen del análisis de mercado.
+
+\subsection{Proyección a cuatro años}
+
+\begin{tabularx}{\textwidth}{X r r r r}
+  \toprule
+  \textbf{Concepto (millones de COP)} & \textbf{Año 1} & \textbf{Año 2} & \textbf{Año 3} & \textbf{Año 4} \\
+  \midrule
+  Suscriptores de pago & 439 & 483 & 628 & 1.004 \\
+  Ingresos por suscripciones & 105,4 & 115,9 & 150,7 & 241,0 \\
+  Nómina & 90,0 & 95,0 & 98,8 & 102,5 \\
+  Infraestructura y tiendas & 10,6 & 11,2 & 11,6 & 12,1 \\
+  Mercadeo & 5,0 & 5,0 & 10,0 & 10,0 \\
+  Costos y gastos totales & 105,6 & 111,1 & 120,5 & 124,6 \\
+  \textbf{Resultado operativo} & \textbf{$-$0,2} & \textbf{4,8} & \textbf{30,2} & \textbf{116,4} \\
+  \bottomrule
+\end{tabularx}
+
+El punto de equilibrio del primer año es de 440 suscriptores: \$105,6 millones de costos divididos entre \$240.000 por suscriptor. La meta de 439 queda justo en ese borde, sin margen. El resultado acumulado de los cuatro años es de unos \$151 millones.
+
+\subsection{Lo que esta proyección no incluye}
+
+\begin{itemize}[leftmargin=1.5em]
+  \item Los ingresos por licencias a universidades, porque no tienen precio definido.
+  \item Las comisiones de la pasarela de pagos y de las tiendas de aplicaciones, la depreciación y los impuestos.
+  \item La cancelación de suscripciones. Suponemos que cada suscriptor paga los doce meses; si paga menos, el ingreso baja en proporción.
+  \item La hoja de simulación del Sprint 7 todavía usa 100 suscriptores y otros precios, y por eso muestra pérdidas. Debe actualizarse con estos supuestos.
+\end{itemize}
+
+% ---------- 11 ----------
+\section{Riesgos}
+
+\begin{tabularx}{\textwidth}{Y Y}
+  \toprule
+  \textbf{Riesgo} & \textbf{Cómo lo manejamos} \\
+  \midrule
+  No llegar a 20.900 registros con un presupuesto de mercadeo pequeño & Empezar por la universidad y medir en el piloto el costo real de cada registro. \\
+  Que menos del 2,1 \% pase a pago & Probar precios y el momento de la oferta de Plus; apoyarse en las licencias. \\
+  Contenido financiero con errores & Revisión de una persona con formación financiera antes de publicar. \\
+  Manejo de datos personales & Pedir solo los datos necesarios y mostrar a la universidad métricas anónimas. \\
+  Un competidor con más recursos & Alianzas con universidades y contenido pensado para jóvenes. \\
+  Que el equipo no pueda dedicarse de tiempo completo & Avanzar por etapas y condicionar la nómina a los resultados del piloto. \\
+  \bottomrule
+\end{tabularx}
+
+% ---------- 12 ----------
+\section{Hoja de ruta}
+
+\begin{tabularx}{\textwidth}{P{4.2cm} Y}
+  \toprule
+  \textbf{Etapa} & \textbf{Qué haremos} \\
+  \midrule
+  Noviembre de 2026 & Pitch final y entrega del MVP documentado. \\
+  Primer semestre de 2027 & Piloto con la Javeriana, pruebas con usuarios reales y definición del precio de la licencia. \\
+  Segundo semestre de 2027 & Pasarela de pagos, despliegue en la nube y notificaciones de recordatorios. \\
+  2028 & Versión móvil en tiendas de aplicaciones y nuevas universidades. \\
+  \bottomrule
+\end{tabularx}
+
+El piloto debe responder tres preguntas: cuántos jóvenes se registran, cuántos siguen usando la aplicación después del primer mes y cuántos pagarían por Plus. Con esas tres cifras se ajusta este plan.
+
+% ---------- 13 ----------
+\section{Referencias}
+
+\begin{enumerate}[label={[\arabic*]},leftmargin=2em]
+  \item Superintendencia Financiera de Colombia y Banca de las Oportunidades. Reporte de Inclusión Financiera 2025.
+  \item Banca de las Oportunidades y Superintendencia Financiera de Colombia. Reporte de Inclusión Financiera 2024.
+  \item DANE. Proyecciones de población 2026, consultadas en una fuente secundaria.
+  \item RevenueCat. State of Subscription Apps 2026.
+  \item Experian. Midatacrédito, aplicación de acompañamiento financiero. Sitio corporativo de Experian (experianplc.com), sección de salud financiera.
+  \item Infobae (12 de octubre de 2024). Más de 600.000 colombianos revisan mensualmente su historial crediticio.
+\end{enumerate}
+
+Los datos de la encuesta, del mercado, del producto y de costos vienen de los documentos del proyecto: artefactos de validación, análisis de mercado versión 2, documentación de la aplicación y hoja de simulación financiera.
+
+\end{document}

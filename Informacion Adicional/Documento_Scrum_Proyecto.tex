@@ -1,0 +1,309 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------- Idioma y codificación ----------
+\usepackage[spanish,es-tabla]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+% ---------- Formato de página ----------
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{setspace}
+\setstretch{1.15}
+\usepackage{parskip}
+
+% ---------- Tablas y listas ----------
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{enumitem}
+
+% ---------- Títulos en negrita (sin color) ----------
+\usepackage{titlesec}
+\titleformat{\section}
+  {\Large\bfseries}
+  {\thesection}{0.8em}{}
+\titleformat{\subsection}
+  {\large\bfseries}
+  {\thesubsection}{0.6em}{}
+\titleformat{\subsubsection}
+  {\normalsize\bfseries}
+  {\thesubsubsection}{0.5em}{}
+\titlespacing*{\section}{0pt}{18pt}{8pt}
+
+% ---------- Encabezado y pie ----------
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textbf{Scrum --- Proyecto completo}}
+\fancyhead[R]{\small\textbf{CrediStep}}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% ---------- Caja del objetivo (solo blanco y negro) ----------
+\usepackage[most]{tcolorbox}
+\newtcolorbox{objetivo}{
+  colback=white, colframe=black,
+  boxrule=0.8pt, arc=0pt,
+  left=8pt, right=8pt, top=6pt, bottom=6pt,
+  fonttitle=\bfseries, title={Objetivo del Proyecto}
+}
+
+% ======================================================
+\begin{document}
+
+% ---------- Portada ----------
+\begin{center}
+  {\Huge\bfseries Documento de Proyecto} \\[0.4cm]
+  {\LARGE\bfseries Sprints 1 a 10} \\[0.3cm]
+  {\large CrediStep} \\[1.2cm]
+\end{center}
+
+% ---------- 1. Información general ----------
+\section{Información general}
+
+\begin{tabularx}{\textwidth}{>{\bfseries}l X}
+  \toprule
+  Proyecto             & CrediStep \\
+  Asignatura           & Gestión de Innovación en TI, Pontificia Universidad Javeriana \\
+  Product Owner        & Víctor Hugo Vela Pinzón (profesor) \\
+  Scrum Master         & Beiker Romario Jaramillo Giraldo \\
+  Equipo de desarrollo & Laura Sofía Ortiz Gómez, Sarahy Michelle Silva Pinto, Valentina Carrillo Peñuela, Miguel Ángel Gómez López \\
+  Fecha de inicio      & 16/07/2026 \\
+  Fecha de fin         & 25/11/2026 \\
+  Número de sprints    & 10 \\
+  Duración por sprint  & Entre 1 y 4 semanas \\
+  Capacidad total      & 116 puntos \\
+  \bottomrule
+\end{tabularx}
+
+% ---------- 2. Objetivo del proyecto ----------
+\section{Objetivo del proyecto}
+
+\begin{objetivo}
+  Diseñar y validar CrediStep, un GPS financiero que acompaña a los jóvenes colombianos
+  antes de su primer crédito, con un problema respaldado por datos, un modelo de negocio
+  claro, un mercado calculado con fuentes oficiales y un MVP funcional.
+\end{objetivo}
+
+% ---------- 3. Backlog del producto ----------
+\section{Backlog del producto}
+
+\subsection{Épicas del proyecto}
+
+\begin{tabularx}{\textwidth}{c X c c c}
+  \toprule
+  \textbf{ID} & \textbf{Épica} & \textbf{Sprint} & \textbf{Puntos} & \textbf{Estado} \\
+  \midrule
+  EP-01 & Como equipo, queremos documentar el problema con fuentes oficiales, para saber a quién ayudamos. & 1 & 10 & Terminada \\
+  EP-02 & Como equipo, queremos presentar la idea en un primer pitch, para comunicar el problema y la solución. & 2 & 10 & Terminada \\
+  EP-03 & Como equipo, queremos validar el problema con una encuesta a jóvenes, para decidir si seguimos con la idea. & 3 & 13 & Terminada \\
+  EP-04 & Como equipo, queremos describir el modelo de negocio en un lienzo Canvas, para explicar cómo se sostiene el proyecto. & 4 & 8 & Terminada \\
+  EP-05 & Como equipo, queremos calcular el TAM, el SAM y el SOM, para dimensionar el mercado. & 5 & 13 & Terminada \\
+  EP-06 & Como equipo, queremos dibujar a mano el flujo principal de la aplicación, para mostrar cómo la usa un joven. & 6 & 8 & Terminada \\
+  EP-07 & Como equipo, queremos armar el contexto financiero, para proyectar ingresos y costos. & 7 & 10 & Terminada \\
+  EP-08 & Como equipo, queremos presentar un segundo pitch de tres minutos, para mostrar la validación y el mercado. & 8 & 10 & Terminada \\
+  EP-09 & Como equipo, queremos construir y documentar un MVP funcional, para demostrar la solución. & 9 & 18 & Terminada \\
+  EP-10 & Como equipo, queremos presentar el pitch final ante jurados y enviar los entregables, para cerrar el proyecto. & 10 & 16 & En curso \\
+  \bottomrule
+\end{tabularx}
+
+% ---------- 4. Plan de sprints ----------
+\section{Plan de sprints}
+
+\begin{tabularx}{\textwidth}{c X l l c}
+  \toprule
+  \textbf{Sprint} & \textbf{Tema} & \textbf{Inicio} & \textbf{Fin} & \textbf{Historias} \\
+  \midrule
+  1 & Contextualización del problema & 16/07/2026 & 30/07/2026 & 3 \\
+  2 & Primer pitch & 03/08/2026 & 31/08/2026 & 3 \\
+  3 & Artefactos de validación & 01/09/2026 & 21/09/2026 & 3 \\
+  4 & Lienzo Canvas & 22/09/2026 & 05/10/2026 & 2 \\
+  5 & Definición de mercado & 06/10/2026 & 12/10/2026 & 4 \\
+  6 & Prototipado a mano & 13/10/2026 & 19/10/2026 & 3 \\
+  7 & Contexto financiero & 20/10/2026 & 26/10/2026 & 3 \\
+  8 & Segundo pitch & 27/10/2026 & 02/11/2026 & 3 \\
+  9 & MVP y mockups & 03/11/2026 & 16/11/2026 & 5 \\
+  10 & Pitch final & 17/11/2026 & 25/11/2026 & 4 \\
+  \bottomrule
+\end{tabularx}
+
+\subsection{Entregables por sprint}
+
+\begin{tabularx}{\textwidth}{c X l}
+  \toprule
+  \textbf{Sprint} & \textbf{Entregable principal} & \textbf{Responsable} \\
+  \midrule
+  1 & Documento de contextualización con cifras y fuentes & Sarahy Silva \\
+  2 & Pitch de nueve diapositivas con su guion & Valentina Carrillo \\
+  3 & Encuesta a 126 jóvenes y análisis de resultados & Miguel Gómez \\
+  4 & Lienzo Canvas con la explicación de sus bloques & Beiker Jaramillo \\
+  5 & Definición de mercado, versión 1 & Laura Ortiz \\
+  6 & Prototipo a mano de cinco pantallas & Sarahy Silva \\
+  7 & Hoja de simulación financiera & Valentina Carrillo \\
+  8 & Guion, diapositivas y video del segundo pitch & Miguel Gómez \\
+  9 & Aplicación web, su documentación y el mercado en versión 2 & Beiker Jaramillo \\
+  10 & Diapositivas del pitch final y entregables & Laura Ortiz \\
+  \bottomrule
+\end{tabularx}
+
+% ---------- 5. Seguimiento del proyecto ----------
+\section{Seguimiento del proyecto}
+
+\begin{tabularx}{\textwidth}{c X X}
+  \toprule
+  \textbf{Sprint} & \textbf{Lo que se logró} & \textbf{Lo que quedó para después} \\
+  \midrule
+  1 & Problema y usuario definidos con datos oficiales & Guardar los PDF de las fuentes en la carpeta \\
+  2 & Pitch que cubre las secciones esperadas & Manejar el tiempo y enviar el deck \\
+  3 & Supuesto inicial validado con 126 respuestas & Enviar el Excel/CSV y las fechas de aplicación \\
+  4 & Modelo de negocio completo en el lienzo & Reducir el texto del lienzo y corregir canales \\
+  5 & Mercado calculado en su versión 1 & Ampliarlo más allá de Bogotá \\
+  6 & Flujo de la aplicación en cinco pantallas & Consolidar los prototipos en un MVP \\
+  7 & Base financiera con los precios de la aplicación & Alinear la hoja con el mercado \\
+  8 & Pitch de tres minutos, en clase y en video & Incluir los aspectos financieros \\
+  9 & MVP web funcional y mercado en versión 2 & Probarlo con usuarios reales \\
+  10 & Primer borrador de las diapositivas & Ensayo, hoja financiera y entregables \\
+  \bottomrule
+\end{tabularx}
+
+\subsection{Impedimentos y acciones}
+
+\begin{tabularx}{\textwidth}{X l l}
+  \toprule
+  \textbf{Impedimento} & \textbf{Responsable} & \textbf{Estado} \\
+  \midrule
+  Rango de edad mal citado en una cifra (Sprint 1) & Valentina Carrillo & Resuelto \\
+  Los títulos del guion y de las diapositivas no coincidían (Sprint 2) & Beiker Jaramillo & Resuelto \\
+  El deck usado en el pitch presencial no se envió al profesor (Sprint 2) & Beiker Jaramillo & Abierto \\
+  La muestra se concentró en jóvenes de 18 a 20 años (Sprint 3) & Miguel Gómez & Abierto \\
+  No se envió el Excel/CSV exportado con el detalle de las respuestas (Sprint 3) & Miguel Gómez & Abierto \\
+  La estructura de costos no tiene cifras (Sprint 4) & Laura Ortiz & Abierto \\
+  La conversión a pago del 20 \% es un supuesto sin fuente (Sprint 5) & Laura Ortiz & Abierto \\
+  La plantilla trae precios y productos que la aplicación no tiene (Sprint 7) & Laura Ortiz & Resuelto \\
+  El pitch no incluyó los aspectos financieros (Sprint 8) & Valentina Carrillo & Abierto \\
+  La hoja financiera no coincide con el mercado de la versión 2 (Sprint 9) & Laura Ortiz & Abierto \\
+  La hoja financiera no coincide con las cifras de las diapositivas (Sprint 10) & Sarahy Silva & Abierto \\
+  Falta el Excel/CSV con las respuestas de la encuesta (Sprint 10) & Miguel Gómez & Abierto \\
+  Faltan las fotos del equipo en las diapositivas (Sprint 10) & Laura Ortiz & Abierto \\
+  \bottomrule
+\end{tabularx}
+
+% ---------- 6. Métricas del proyecto ----------
+\section{Métricas del proyecto}
+
+\begin{tabularx}{\textwidth}{X c c}
+  \toprule
+  \textbf{Indicador} & \textbf{Planeado} & \textbf{Real} \\
+  \midrule
+  Sprints realizados              & 10 & 9 cerrados y 1 en curso \\
+  Puntos de historia completados  & 116 & 100 \\
+  Historias completadas           & 33 & 29 \\
+  Velocidad promedio por sprint   & 11,6 & 11,1 \\
+  \bottomrule
+\end{tabularx}
+
+\subsection{Puntos por sprint}
+
+{\setlength{\tabcolsep}{4pt}
+\begin{tabularx}{\textwidth}{X c c c c c c c c c c c}
+  \toprule
+  \textbf{Sprint} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7} & \textbf{8} & \textbf{9} & \textbf{10} & \textbf{Total} \\
+  \midrule
+  Puntos planeados    & 10 & 10 & 13 & 8 & 13 & 8 & 10 & 10 & 18 & 16 & 116 \\
+  Puntos completados  & 10 & 10 & 13 & 8 & 13 & 8 & 10 & 10 & 18 & -- & 100 \\
+  \bottomrule
+\end{tabularx}}
+
+{El Sprint 10 termina el 25/11/2026; sus puntos se registran al cierre.}
+
+% ---------- 7. Revisión del proyecto ----------
+\section{Revisión del proyecto}
+
+\subsection{Incrementos entregados}
+\begin{itemize}[leftmargin=1.5em]
+  \item {Problema respaldado con datos oficiales de inclusión financiera.}
+  \item {Validación con 126 jóvenes: el 54 \% se sentiría inseguro al pedir su primer crédito y el 35,7 \% ya evitó pedirlo.}
+  \item {Modelo de negocio con dos fuentes de ingreso: suscripción y licencias para universidades.}
+  \item {Mercado calculado: 11,6 millones de jóvenes de 18 a 30 años (TAM), 4,2 millones atendibles (SAM) y 439 suscriptores de pago en el primer año (SOM), unos 105 millones de pesos.}
+  \item {Prototipo a mano, MVP web funcional y su documentación.}
+  \item {Dos pitches presentados y el borrador de las diapositivas del pitch final.}
+\end{itemize}
+
+\subsection{Retroalimentación de los interesados}
+{Comentarios del profesor, que actuó como Product Owner, en las entregas calificadas:}
+
+\begin{tabularx}{\textwidth}{c l c X}
+  \toprule
+  \textbf{Sprint} & \textbf{Entrega} & \textbf{Nota} & \textbf{Comentario principal} \\
+  \midrule
+  2 & Primer pitch & 3,8 & Cubre las secciones esperadas. Usamos casi el doble del tiempo, faltó presentar al equipo y un buen cierre, y no enviamos el deck. \\
+  3 & Artefactos de validación & 4,6 & Buenas preguntas y análisis completo. Faltaron las fechas de aplicación y el Excel/CSV con el detalle de las respuestas. \\
+  4 & Lienzo Canvas & 4,5 & Modelo bien estructurado. El lienzo tiene mucho texto, y parte de canales va en relacionamiento con clientes. \\
+  6 & Prototipado a mano & 5,0 & Buen trabajo en el prototipo entregado por Beiker; muestra funcionalidades base para el MVP final. \\
+  8 & Segundo pitch & 4,3 & Buen pitch en general. Faltaron los aspectos financieros, pidió subir más el mercado y el video se pasó un minuto. \\
+  \bottomrule
+\end{tabularx}
+
+{El mercado se recalculó en el Sprint 9 por ese comentario: el SOM pasó de una sola universidad a 439 suscriptores de pago a escala nacional. Los sprints 1, 5, 7 y 9 no tienen una nota registrada en este documento, y el pitch final se evalúa el 24/11/2026.}
+
+\subsection{Pendientes del proyecto}
+\begin{tabularx}{\textwidth}{c X X}
+  \toprule
+  \textbf{Sprint} & \textbf{Pendiente} & \textbf{Acción propuesta} \\
+  \midrule
+  2 & El deck del primer pitch no se envió & Incluirlo en los entregables finales \\
+  3 & Faltan las fechas de aplicación y el Excel/CSV de respuestas & Enviarlos en la entrega final \\
+  4 & El lienzo tiene mucho texto y mezcla canales con relacionamiento & Ajustar el lienzo con frases cortas \\
+  7 & La hoja financiera no coincide con el mercado de la versión 2 & Actualizarla antes del pitch final \\
+  7 & La licencia institucional no tiene precio & Definirlo con la universidad \\
+  9 & El MVP no se ha probado con usuarios reales & Probarlo con cinco jóvenes \\
+  10 & Pitch final y entregables & Presentar el 24/11 y enviar el 25/11 \\
+  \bottomrule
+\end{tabularx}
+
+% ---------- 8. Retrospectiva ----------
+\section{Retrospectiva del proyecto}
+
+\subsection{Qué salió bien}
+\begin{itemize}[leftmargin=1.5em]
+  \item {Cada sprint dejó un entregable concreto, y los nueve primeros se completaron.}
+  \item {El problema se sostuvo con datos oficiales y con una encuesta propia.}
+  \item {La idea central se mantuvo igual de principio a fin: aprender antes de cometer el error.}
+  \item {Los comentarios del profesor se convirtieron en cambios: mercado más amplio, MVP funcional y aspectos financieros en el pitch final.}
+\end{itemize}
+
+\subsection{Qué se puede mejorar}
+\begin{itemize}[leftmargin=1.5em]
+  \item {Varios documentos se escribieron después de usarlos; la contextualización, por ejemplo, llegó después del primer pitch.}
+  \item {Cuando una cifra cambió, no siempre se actualizó en los demás documentos, como pasó con el mercado y la hoja financiera.}
+  \item {El manejo del tiempo falló en los dos pitches: el primero duró casi el doble y el video del segundo se pasó un minuto.}
+  \item {Faltaron evidencias y piezas que el profesor pidió: el deck, el archivo de respuestas y los aspectos financieros.}
+\end{itemize}
+
+\subsection{Acciones de mejora}
+\begin{tabularx}{\textwidth}{X l l}
+  \toprule
+  \textbf{Acción} & \textbf{Responsable} & \textbf{Fecha límite} \\
+  \midrule
+  Presentar el pitch final ante los jurados & Beiker Jaramillo & 24/11/2026 \\
+  Actualizar la hoja de proyección financiera & Sarahy Silva & 24/11/2026 \\
+  Ensayar el pitch con cronómetro y con la demo & Valentina Carrillo & 24/11/2026 \\
+  Probar el MVP con cinco jóvenes & Laura Ortiz & 24/11/2026 \\
+  Enviar el Excel/CSV de respuestas y las fechas de aplicación & Miguel Gómez & 25/11/2026 \\
+  Ajustar el lienzo: frases cortas y canales corregidos & Beiker Jaramillo & 25/11/2026 \\
+  Enviar los entregables finales por Bright Space & Miguel Gómez & 25/11/2026 \\
+  \bottomrule
+\end{tabularx}
+
+% ---------- 9. Aprobaciones ----------
+\section{Aprobaciones}
+
+\vspace{1cm}
+\begin{tabularx}{\textwidth}{X X}
+  \textbf{Product Owner} & \textbf{Scrum Master} \\[2cm]
+  \rule{6cm}{0.4pt} & \rule{6cm}{0.4pt} \\
+  Firma y fecha & Firma y fecha \\
+\end{tabularx}
+
+\end{document}

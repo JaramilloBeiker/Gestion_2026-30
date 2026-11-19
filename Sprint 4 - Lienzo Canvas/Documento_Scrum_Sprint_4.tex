@@ -1,0 +1,220 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------- Idioma y codificación ----------
+\usepackage[spanish,es-tabla]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+% ---------- Formato de página ----------
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{setspace}
+\setstretch{1.15}
+\usepackage{parskip}
+
+% ---------- Tablas y listas ----------
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{enumitem}
+
+% ---------- Títulos en negrita (sin color) ----------
+\usepackage{titlesec}
+\titleformat{\section}
+  {\Large\bfseries}
+  {\thesection}{0.8em}{}
+\titleformat{\subsection}
+  {\large\bfseries}
+  {\thesubsection}{0.6em}{}
+\titleformat{\subsubsection}
+  {\normalsize\bfseries}
+  {\thesubsubsection}{0.5em}{}
+\titlespacing*{\section}{0pt}{18pt}{8pt}
+
+% ---------- Encabezado y pie ----------
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textbf{Scrum --- Sprint \arabic{sprintnum}}}
+\fancyhead[R]{\small\textbf{CrediStep}}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% ---------- Número de sprint ----------
+\newcounter{sprintnum}
+\setcounter{sprintnum}{4}   % Cambie este número en cada sprint
+
+% ---------- Caja del objetivo (solo blanco y negro) ----------
+\usepackage[most]{tcolorbox}
+\newtcolorbox{objetivo}{
+  colback=white, colframe=black,
+  boxrule=0.8pt, arc=0pt,
+  left=8pt, right=8pt, top=6pt, bottom=6pt,
+  fonttitle=\bfseries, title={Objetivo del Sprint}
+}
+
+% ======================================================
+\begin{document}
+
+% ---------- Portada ----------
+\begin{center}
+  {\Huge\bfseries Documento de Sprint} \\[0.4cm]
+  {\LARGE\bfseries Sprint \arabic{sprintnum}} \\[0.3cm]
+  {\large CrediStep} \\[1.2cm]
+\end{center}
+
+\section{Información general}
+
+\begin{tabularx}{\textwidth}{>{\bfseries}l X}
+  \toprule
+  Sprint               & \arabic{sprintnum} \\
+  Proyecto             & CrediStep \\
+  Product Owner        & Víctor Hugo Vela Pinzón (profesor) \\
+  Scrum Master         & Beiker Romario Jaramillo Giraldo \\
+  Equipo de desarrollo & Laura Sofía Ortiz Gómez, Sarahy Michelle Silva Pinto, Valentina Carrillo Peñuela, Miguel Ángel Gómez López \\
+  Fecha de inicio      & 22/09/2026 \\
+  Fecha de fin         & 05/10/2026 \\
+  Duración             & 2 semanas \\
+  Capacidad del equipo & 8 puntos \\
+  \bottomrule
+\end{tabularx}
+
+% ---------- 2. Objetivo del sprint ----------
+\section{Objetivo del sprint}
+
+\begin{objetivo}
+  Describir el modelo de negocio de CrediStep en un lienzo Canvas y explicar con claridad cada uno de sus bloques.
+\end{objetivo}
+
+% ---------- 3. Backlog del sprint ----------
+\section{Backlog del sprint}
+
+\subsection{Historias de usuario seleccionadas}
+
+\begin{tabularx}{\textwidth}{c X c c c}
+  \toprule
+  \textbf{ID} & \textbf{Historia de usuario} & \textbf{Prioridad} & \textbf{Puntos} & \textbf{Estado} \\
+  \midrule
+  HU-01 & Como equipo, quiero completar los bloques del lienzo con lo que validamos, para tener un modelo de negocio claro. & Alta & 5 & Terminada \\
+  HU-02 & Como equipo, quiero explicar cada bloque en un documento, para que cualquier persona entienda el modelo. & Media & 3 & Terminada \\
+  \bottomrule
+\end{tabularx}
+
+% ---------- 4. Desglose de tareas ----------
+\section{Desglose de tareas}
+
+\begin{tabularx}{\textwidth}{c X l c c}
+  \toprule
+  \textbf{HU} & \textbf{Tarea} & \textbf{Responsable} & \textbf{Horas est.} & \textbf{Estado} \\
+  \midrule
+  HU-01 & Reunir los hallazgos de la validación & Valentina Carrillo & 2 & Terminada \\
+  HU-01 & Diseñar el lienzo & Beiker Jaramillo & 5 & Terminada \\
+  HU-01 & Definir ingresos y costos & Laura Ortiz & 3 & Terminada \\
+  HU-02 & Redactar la explicación de los bloques & Miguel Gómez & 4 & Terminada \\
+  HU-02 & Revisar el documento completo & Sarahy Silva & 1 & Terminada \\
+  \bottomrule
+\end{tabularx}
+
+% ---------- 5. Seguimiento diario (Daily Scrum) ----------
+\section{Seguimiento diario (Daily Scrum)}
+
+\begin{tabularx}{\textwidth}{c l X X X}
+  \toprule
+  \textbf{Día} & \textbf{Miembro} & \textbf{Ayer} & \textbf{Hoy} & \textbf{Impedimentos} \\
+  \midrule
+  1 & Beiker Jaramillo & Ajustamos el segmento de clientes & Completar la propuesta de valor en el lienzo & Ninguno \\
+  2 & Laura Ortiz & Revisamos las fuentes de ingreso & Revisar costos y asociaciones & La estructura de costos no tiene cifras \\
+  \bottomrule
+\end{tabularx}
+
+\subsection{Impedimentos y acciones}
+
+\begin{tabularx}{\textwidth}{X l l}
+  \toprule
+  \textbf{Impedimento} & \textbf{Responsable} & \textbf{Estado} \\
+  \midrule
+  La estructura de costos no tiene cifras & Laura Ortiz & Abierto \\
+  \bottomrule
+\end{tabularx}
+
+% ---------- 6. Métricas del sprint ----------
+\section{Métricas del sprint}
+
+\begin{tabularx}{\textwidth}{X c c}
+  \toprule
+  \textbf{Indicador} & \textbf{Planeado} & \textbf{Real} \\
+  \midrule
+  Puntos de historia completados & 8 & 8 \\
+  Historias completadas          & 2 & 2 \\
+  Velocidad del equipo           & 8 & 8 \\
+  \bottomrule
+\end{tabularx}
+
+% ---------- 7. Revisión del sprint ----------
+\section{Revisión del sprint}
+
+\subsection{Incrementos entregados}
+\begin{itemize}[leftmargin=1.5em]
+  \item {Lienzo Canvas completo (Figura 1 del documento).}
+  \item {Documento con la explicación de los nueve bloques.}
+\end{itemize}
+
+\subsection{Retroalimentación de los interesados}
+{Comentarios del profesor (nota: 45/50, equivalente a 4,5):}
+\begin{itemize}[leftmargin=1.5em]
+  \item {El trabajo muestra entendimiento de cómo se estructura el modelo de negocio, y el documento de detalle y las conclusiones son muy buenos.}
+  \item {El lienzo quedó con mucho texto. Cada elemento debe ser una frase corta o un par de palabras; la profundidad va en el documento.}
+  \item {La segmentación es buena, pero se puede caracterizar más con las validaciones: cuánto gastan al mes, en qué gastan y cuánto reciben.}
+  \item {La propuesta de valor está bien, pero puede ser más concreta y clara.}
+  \item {Lo que pusimos en canales sobre adquisición, comunicación y soporte va en relacionamiento con clientes. En canales solo va la app móvil, aclarando si es iOS, Android o ambas, y la página web como acceso o redirección a la tienda.}
+  \item {El resto está bien definido.}
+\end{itemize}
+
+\subsection{Historias no completadas}
+\begin{tabularx}{\textwidth}{c X X}
+  \toprule
+  \textbf{ID} & \textbf{Motivo} & \textbf{Acción propuesta} \\
+  \midrule
+  -- & Todas las historias se completaron. & No aplica \\
+  \bottomrule
+\end{tabularx}
+
+% ---------- 8. Retrospectiva ----------
+\section{Retrospectiva del sprint}
+
+\subsection{Qué salió bien}
+\begin{itemize}[leftmargin=1.5em]
+  \item {El lienzo conecta el problema validado con los ingresos y las alianzas.}
+  \item {El documento de explicación da profundidad a cada bloque.}
+\end{itemize}
+
+\subsection{Qué se puede mejorar}
+\begin{itemize}[leftmargin=1.5em]
+  \item {El lienzo tiene demasiado texto.}
+  \item {Mezclamos canales con relacionamiento con clientes.}
+  \item {La estructura de costos quedó descrita de forma general, sin cifras.}
+\end{itemize}
+
+\subsection{Acciones de mejora}
+\begin{tabularx}{\textwidth}{X l l}
+  \toprule
+  \textbf{Acción} & \textbf{Responsable} & \textbf{Fecha límite} \\
+  \midrule
+  Dejar el lienzo con frases cortas por elemento & Beiker Jaramillo & 25/11/2026 \\
+  Mover adquisición, comunicación y soporte a relacionamiento, y dejar en canales la app y la web & Miguel Gómez & 25/11/2026 \\
+  Caracterizar el segmento con gasto e ingreso mensual & Valentina Carrillo & 25/11/2026 \\
+  Hacer más concreta la propuesta de valor & Sarahy Silva & 25/11/2026 \\
+  \bottomrule
+\end{tabularx}
+
+% ---------- 9. Aprobaciones ----------
+\section{Aprobaciones}
+
+\vspace{1cm}
+\begin{tabularx}{\textwidth}{X X}
+  \textbf{Product Owner} & \textbf{Scrum Master} \\[2cm]
+  \rule{6cm}{0.4pt} & \rule{6cm}{0.4pt} \\
+  Firma y fecha & Firma y fecha \\
+\end{tabularx}
+
+\end{document}
