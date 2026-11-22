@@ -1,0 +1,121 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{setspace}
+\setstretch{1.15}
+\usepackage{parskip}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\titleformat{\section}{\Large\bfseries}{\thesection}{0.8em}{}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{0.6em}{}
+\titlespacing*{\section}{0pt}{18pt}{8pt}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textbf{Contexto financiero}}
+\fancyhead[R]{\small\textbf{CrediStep}}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\begin{document}
+\sloppy
+\begin{center}
+  {\Huge\bfseries Contexto financiero} \\[0.4cm]
+  {\LARGE\bfseries CrediStep} \\[0.3cm]
+  {\large Sprint 7 · Gestión de Innovación en TI, Pontificia Universidad Javeriana} \\[0.6cm]
+\end{center}
+
+\section{Propósito}
+
+Este documento explica la lógica financiera de CrediStep: de dónde salen los ingresos, qué cuesta operar, cuánto hay que invertir y qué tan sensible es el resultado a los supuestos. Las cifras vienen de la hoja \textit{Proyeccion\_Financiera\_V2.xlsx}, de esta misma carpeta, y del análisis de mercado versión 2 [1][2]. Todos los valores están en pesos colombianos (COP) y sin IVA.
+
+\section{Fuente de ingresos}
+
+El único ingreso proyectado es la suscripción individual a CrediStep Plus, de \$20.000 al mes, es decir, \$240.000 al año por suscriptor. El plan gratuito no genera ingresos y funciona como puerta de entrada. La licencia institucional para universidades no tiene precio definido, así que la hoja la deja en cero y cualquier ingreso por ese concepto sería adicional.
+
+El número de suscriptores sale del mercado: el SAM es de 4.182.110 jóvenes, el alcance digital del primer año es del 0,5 \% (20.911 registros) y el 2,1 \% de ellos paga, que es la conversión mediana de las aplicaciones freemium [2][3]. Eso da 439 suscriptores y \$105,4 millones en el año 1. El 0,5 \% es un supuesto del equipo, calibrado para alcanzar una meta de unos \$100 millones; es la cifra que más pesa y la primera que debe medirse en el piloto.
+
+\section{Inversión y costos}
+
+La inversión inicial es de \$5 millones, aportados por el equipo y sin préstamo: \$4 millones de puesta en marcha y \$1 millón de caja inicial. Los costos fijos del año 1 suman \$105,6 millones:
+
+\begin{tabularx}{\textwidth}{X r r}
+  \toprule
+  \textbf{Concepto} & \textbf{Año 1 (millones)} & \textbf{\% del total} \\
+  \midrule
+  Nómina & 90,0 & 85,2 \% \\
+  Infraestructura y tiendas de aplicaciones & 10,6 & 10,0 \% \\
+  Mercadeo & 5,0 & 4,7 \% \\
+  \textbf{Total} & \textbf{105,6} & \textbf{100 \%} \\
+  \bottomrule
+\end{tabularx}
+
+La nómina equivale a \$7,5 millones al mes para todo el equipo. Son valores estimados por el equipo, no cotizaciones. El costo variable por suscriptor se supone en cero, porque no se incluyen comisiones de la pasarela de pagos ni de las tiendas de aplicaciones.
+
+\section{Proyección}
+
+\begin{tabularx}{\textwidth}{X r r r r}
+  \toprule
+  \textbf{Millones de COP} & \textbf{Año 1} & \textbf{Año 2} & \textbf{Año 3} & \textbf{Año 4} \\
+  \midrule
+  Suscriptores de pago & 439 & 483 & 628 & 1.004 \\
+  Ingresos & 105,4 & 115,9 & 150,7 & 241,0 \\
+  Costos y gastos (sin depreciación) & 105,6 & 111,1 & 120,5 & 124,6 \\
+  Resultado antes de depreciación e impuestos & $-$0,2 & 4,8 & 30,2 & 116,4 \\
+  Utilidad neta & $-$1,0 & 2,6 & 19,1 & 75,1 \\
+  \bottomrule
+\end{tabularx}
+
+El crecimiento de suscriptores es de 10 \%, 30 \% y 60 \% en los años 2, 3 y 4, y los costos suben con la inflación de la plantilla. La utilidad neta es menor que el resultado de la fila anterior porque descuenta la depreciación de \$0,8 millones y el impuesto de renta del 35 \%.
+
+\section{Indicadores de evaluación}
+
+Con la tasa de evaluación de la plantilla, del 15 \%, el valor presente neto a cinco años es de \$168,4 millones y la inversión se recupera en el año 3. La tasa interna de retorno resulta de 162 \%, una cifra muy alta que no debe leerse como un rendimiento esperado: aparece porque la inversión inicial es de solo \$5 millones frente a flujos que dependen por completo de cumplir la meta del año 1.
+
+El punto de equilibrio del año 1 es de 440 suscriptores (\$105,6 millones de costos divididos entre \$240.000). La meta de 439 queda a un suscriptor de ese punto, sin margen de seguridad.
+
+\section{Análisis de sensibilidad}
+
+El resultado cambia mucho con dos supuestos: el alcance digital y la conversión a pago. Según el análisis de mercado [2], los suscriptores del año 1 serían:
+
+\begin{tabularx}{\textwidth}{X r r r}
+  \toprule
+  \textbf{Alcance digital} & \textbf{Conv. 1,0 \%} & \textbf{Conv. 2,1 \%} & \textbf{Conv. 2,6 \%} \\
+  \midrule
+  0,25 \% & 105 & 220 & 272 \\
+  0,50 \% (base) & 209 & 439 & 544 \\
+  0,75 \% & 314 & 659 & 816 \\
+  \bottomrule
+\end{tabularx}
+
+Frente al equilibrio de 440, la celda base (439) queda justo en el borde y solo superan el equilibrio las celdas de 544, 659 y 816 suscriptores. Con alcance de 0,5 \% y conversión de 1,0 \%, los 209 suscriptores darían unos \$50 millones de ingresos y una pérdida cercana a \$55 millones en el año. Con el escenario optimista (0,75 \% y 2,6 \%), los ingresos llegarían a unos \$196 millones. Este rango, de \$21 a \$196 millones, es la verdadera incertidumbre del plan.
+
+\section{Lo que dice la entrada gradual de suscriptores}
+
+La pestaña 6 de la hoja reparte los registros mes a mes, con una entrada gradual de usuarios. En ese caso, el recaudo de los primeros doce meses es de \$45,4 millones, no de \$105,4, porque los suscriptores no pagan el año completo. Con costos de \$105,6 millones, el primer año calendario dejaría un déficit de caja cercano a \$60 millones, muy superior a los \$5 millones de capital aportado. Por eso el «año 1» de la proyección debe leerse como el primer año con la base completa de 439 suscriptores, y el equipo tendría que financiar la nómina mientras la base crece.
+
+\section{Limitaciones}
+
+\begin{itemize}[leftmargin=1.5em]
+  \item No se incluyen ingresos por licencias, comisiones de pasarela ni de tiendas, ni cancelaciones de suscripción: se supone que cada suscriptor paga los doce meses.
+  \item Los costos de infraestructura y la nómina son estimaciones del equipo, sin cotizaciones.
+  \item El precio se mantiene en \$20.000 al mes durante los cinco años.
+  \item Las cifras de mercado que alimentan los ingresos tienen supuestos propios y deben validarse en el piloto.
+\end{itemize}
+
+\section{Conclusión y siguientes pasos}
+
+CrediStep es financieramente viable solo si cumple la meta de suscriptores del primer año, y esa meta depende de un alcance que todavía no se ha medido. El plan se sostiene en el segundo año y mejora con fuerza desde el tercero, pero el primero exige cubrir un déficit de caja que hoy no está financiado. Los siguientes pasos son medir en el piloto el registro y la conversión reales, definir el precio de la licencia institucional, cotizar la infraestructura y definir cómo se financiará la nómina durante el primer año.
+
+\section*{Referencias}
+\begin{enumerate}[label={[\arabic*]},leftmargin=2em]
+  \item CrediStep. Proyección financiera, versión 2 (\textit{Proyeccion\_Financiera\_V2.xlsx}), Sprint 7. Noviembre de 2026.
+  \item CrediStep. Análisis de mercado: TAM, SAM y SOM, versión 2.0 (\textit{Definicion\_de\_mercado\_V2.pdf}), Sprint 5. Noviembre de 2026.
+  \item RevenueCat. State of Subscription Apps 2026.
+\end{enumerate}
+\end{document}
